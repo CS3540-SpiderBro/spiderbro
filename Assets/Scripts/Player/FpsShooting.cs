@@ -12,7 +12,8 @@ public class FpsShooting : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (Input.GetButtonDown("Fire2")){
+		if (Input.GetButtonDown("Fire2"))
+        {
 			Camera cam = Camera.main;
 			Rigidbody projectile = (Rigidbody)Instantiate (bullet, cam.transform.position + cam.transform.forward, cam.transform.rotation);
 			projectile.AddForce(cam.transform.forward * bulletforce, ForceMode.Impulse);

@@ -10,7 +10,7 @@ public class BulletBehaviour : MonoBehaviour {
 	public GameObject explode;
 	public LevelStatus levelStatus;
 
-
+    public GameObject bloodsplat;
 
 	// Use this for initialization
 	void Start () {
@@ -59,9 +59,9 @@ public class BulletBehaviour : MonoBehaviour {
 	}
 
 	void KillEnemy(Collision col){
-		Destroy(gameObject);
 		col.gameObject.tag = "Dead";
-		Instantiate(explode, col.gameObject.transform.position, Quaternion.identity);
-		Destroy (col.gameObject);
+		Instantiate(bloodsplat, gameObject.transform.position, gameObject.transform.rotation);
+		Destroy(gameObject);
+        Destroy(col.gameObject);
 	}
 }

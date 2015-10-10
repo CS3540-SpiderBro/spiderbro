@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Fire
   - Dead
+  - Mouth
+  - Mouth_Target
+  - spawner
   layers:
   - Default
   - TransparentFX

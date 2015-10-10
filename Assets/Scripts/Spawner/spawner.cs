@@ -4,14 +4,16 @@ using System.Collections;
 /// spawn ccontrol center, mass spawn at first then waves after, randomize spawn locations based on x and z coordinates
 /// </summary>
 public class spawner : MonoBehaviour {
-    public Rigidbody aEnemy;
+    public GameObject aEnemy;
     public int xMin;
     public int xMax;
     public int zMin;
     public int zMax;
+    public int yMax;
     public int numEnemies;
     public int activeEnemies;
 	public bool SpawnON = true;
+    public int rotateX;
     int enemyCount;
     
     // Use this for initialization
@@ -22,7 +24,7 @@ public class spawner : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         
-        enemyCount = GameObject.FindGameObjectsWithTag("EnemyUnit").Length;
+        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
         Debug.Log(enemyCount);
         if (activeEnemies <= 0 || enemyCount <= 1)
         {
@@ -43,8 +45,8 @@ public class spawner : MonoBehaviour {
     public void SpawnEnemy()
     {
 
-        Vector3 newPos = new Vector3(Random.Range(xMin, xMax),250, Random.Range(zMin, zMax));
-		Rigidbody aEnemyClone = (Rigidbody) Instantiate(aEnemy, newPos, Quaternion.identity);
+        Vector3 newPos = new Vector3(Random.Range(xMin, xMax), yMax, Random.Range(zMin, zMax));
+		GameObject aEnemyClone = (GameObject) Instantiate(aEnemy, newPos, transform.rotation * Quaternion.Euler(rotateX, 0, 0));
         
        
     }

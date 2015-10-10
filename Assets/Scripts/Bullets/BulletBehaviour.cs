@@ -11,9 +11,10 @@ public class BulletBehaviour : MonoBehaviour {
 	public LevelStatus levelStatus;
 
     public GameObject bloodsplat;
+    public GameObject Bulletsplat;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
 		if (gameControllerObject != null) 
 		{
@@ -36,13 +37,12 @@ public class BulletBehaviour : MonoBehaviour {
 
 	void OnCollisionEnter(Collision col)
 	{
-		if (col.gameObject.CompareTag ("Enemy")) {
+		Instantiate(Bulletsplat, gameObject.transform.position, gameObject.transform.rotation);
+        if (col.gameObject.CompareTag ("Enemy")) {
 			try{
 
 				KillEnemy(col);
 				levelStatus.AddKill();
-//				EnemyCount -= 1;
-//				killCount += 1;
 
 
 			}
@@ -51,9 +51,10 @@ public class BulletBehaviour : MonoBehaviour {
 			}
 
 		}
-	}
+        Destroy(gameObject);
+    }
 
-	void Disappear ()
+    void Disappear ()
 	{
 		Destroy (gameObject);
 	}
@@ -61,7 +62,6 @@ public class BulletBehaviour : MonoBehaviour {
 	void KillEnemy(Collision col){
 		col.gameObject.tag = "Dead";
 		Instantiate(bloodsplat, gameObject.transform.position, gameObject.transform.rotation);
-		Destroy(gameObject);
         Destroy(col.gameObject);
 	}
 }

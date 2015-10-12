@@ -837,6 +837,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 5416874, guid: f23c7c2820f6efb418aff50c2055fc09, type: 2}
+  spitSlider: {fileID: 1564705450}
+  SPIT_CAPACITY: 3
+  SPIT_REGEN_RATE: 2
 --- !u!1001 &405046269
 Prefab:
   m_ObjectHideFlags: 0
@@ -2089,9 +2092,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 1
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

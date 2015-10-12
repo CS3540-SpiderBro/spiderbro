@@ -2,24 +2,28 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class LevelStatus : MonoBehaviour {
-	public int EnemyCount;
+public class LevelStatus : MonoBehaviour
+{
+    public const float TOTAL_SECONDS = 10.0f;
+
+    public int EnemyCount;
 	public Text winText;
 	public Text killCountText;
 	public Text timerText;
 	public Text crossHair;
-
-	public float timeSeconds = 10.0f;
 	
 	private int _killCount;
 	private bool gameOver;
+    private float secondsLeft;
 
-	// Use this for initialization
-	void Start () 
+
+    // Use this for initialization
+    void Start () 
 	{
 		winText.text = "";
 		_killCount = 0;
 		gameOver = false;
+        secondsLeft = TOTAL_SECONDS;
 		DisplayKillCount ();
 	}
 	
@@ -31,14 +35,13 @@ public class LevelStatus : MonoBehaviour {
 
 		DisplayKillCount ();
 
-		timeSeconds -= Time.deltaTime;
-		if (timeSeconds > 0)
-			timerText.text = string.Format ("Timer: {0}", (int)timeSeconds);
-		else
-			timerText.text = string.Format ("Timer: {0}", 0);
-			
+        // decrease timer to 0
+        secondsLeft = Mathf.Max(secondsLeft - Time.deltaTime, 0);
+        // set timer text
+        timerText.text = string.Format("Time: {0}:{1:00.00}", (int)(secondsLeft / 60), secondsLeft % 60);
 
-		if (gameOver = timeSeconds < 0)
+
+        if (gameOver = secondsLeft == 0)
 		{
 			Destroy(crossHair);
 			winText.text = "Time is Up!!";

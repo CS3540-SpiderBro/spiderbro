@@ -23,6 +23,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400706}
+  - 114: {fileID: 11495916}
+  - 33: {fileID: 3366156}
   m_Layer: 0
   m_Name: enemyBlock3
   m_TagString: Enemy
@@ -145,6 +147,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177108}
   m_Mesh: {fileID: 4300000, guid: 94b4e8fb59f223742a88891b0b499c4e, type: 3}
+--- !u!33 &3366156
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176044}
+  m_Mesh: {fileID: 0}
 --- !u!65 &6521200
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -157,13 +166,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .0795883015, y: .117855176, z: .116501279}
   m_Center: {x: 0, y: 7.45057971e-09, z: -.04023128}
+--- !u!114 &11495916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e68cb3daa03d8d14281c1072dae21e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xp: 0
+  is_alive: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 94b4e8fb59f223742a88891b0b499c4e, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 176044}

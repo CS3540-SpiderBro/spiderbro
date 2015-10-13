@@ -13,7 +13,8 @@ public class FpsShooting : MonoBehaviour {
     private float spitAmmo;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
         spitAmmo = SPIT_CAPACITY;
 	}
 	
@@ -22,7 +23,7 @@ public class FpsShooting : MonoBehaviour {
         
         spitAmmo = Mathf.Min(SPIT_CAPACITY, spitAmmo + SPIT_REGEN_RATE * Time.deltaTime);
 
-		if (Input.GetButtonDown("Fire1") && spitAmmo >= 1f){
+		if (Input.GetButtonDown("Fire2") && spitAmmo >= 1f){
 			Camera cam = Camera.main;
 			Rigidbody projectile = (Rigidbody)Instantiate (bullet, cam.transform.position + cam.transform.forward, cam.transform.rotation);
 			projectile.AddForce(cam.transform.forward * bulletforce, ForceMode.Impulse);

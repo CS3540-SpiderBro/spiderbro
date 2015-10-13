@@ -2,6 +2,8 @@
 
 SpiderBro project is a Unity based game, created by UVU students in the CS3540 Game Development Class.  As the game is not yet finished, this readme will not contain very many public details about the game until the devs view it as sufficiently complete.
 
+###Repository info
+https://github.com/CS3540-SpiderBro/spiderbro.git
 
 ### Version
 0.0.1
@@ -12,3 +14,4 @@ SpiderBro project is a Unity based game, created by UVU students in the CS3540 G
 Unity Engine: https://unity3d.com/
 
 Dillinger Readme Tool: http://dillinger.io/
+

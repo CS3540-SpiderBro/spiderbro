@@ -222,9 +222,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-  m_RootOrder: 13
-=======
   m_RootOrder: 12
 --- !u!1 &213882005
 GameObject:
@@ -279,7 +276,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
->>>>>>> df_branch2
 --- !u!1 &245385846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,11 +1245,7 @@ Transform:
   m_LocalScale: {x: 200, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-  m_RootOrder: 6
-=======
   m_RootOrder: 5
->>>>>>> df_branch2
 --- !u!1001 &1288823312
 Prefab:
   m_ObjectHideFlags: 0
@@ -1706,11 +1698,7 @@ Transform:
   m_LocalScale: {x: 100, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-  m_RootOrder: 7
-=======
   m_RootOrder: 6
->>>>>>> df_branch2
 --- !u!1001 &1586808430
 Prefab:
   m_ObjectHideFlags: 0

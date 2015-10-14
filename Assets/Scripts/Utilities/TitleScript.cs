@@ -3,6 +3,8 @@ using System.Collections;
 
 public class TitleScript : MonoBehaviour {
 
+	public string level = "GregTest2";
+
 	// Use this for initialization
 	void Start () {
 	
@@ -12,7 +14,7 @@ public class TitleScript : MonoBehaviour {
 	void Update () {
 		if(Input.GetKeyDown("space") ) 
         {
-            Application.LoadLevel("Level0");
+			Application.LoadLevel(level);
         }
 	}
 }

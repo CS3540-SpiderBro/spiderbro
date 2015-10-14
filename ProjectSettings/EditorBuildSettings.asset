@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/_Scenes/Title.unity
   - enabled: 1
     path: Assets/_Scenes/Level0.unity
+  - enabled: 1
+    path: Assets/_Scenes/GregTest2.unity

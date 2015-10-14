@@ -1824,6 +1824,10 @@ Prefab:
       propertyPath: m_Name
       value: Player_NEW
       objectReference: {fileID: 0}
+    - target: {fileID: 11475992, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
+      propertyPath: spitSlider
+      value: 
+      objectReference: {fileID: 1564705450}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
   m_IsPrefabParent: 0

@@ -32,8 +32,11 @@ public class mouthScript : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-
-
+        Text timerObject = GameObject.Find("TimerText").GetComponent<Text>();
+        if (timerObject.text == "Time: 0:00.00")
+        {
+            gameWin();
+        }
         if (health <= 0)
         {
             Debug.Log("MOUTH IS DESTROYED");
@@ -48,6 +51,12 @@ public class mouthScript : MonoBehaviour {
         health = health - dam;
     }
 
+    void gameWin()
+    {
+        Text textobject = GameObject.Find("WinningText").GetComponent<Text>();
+        textobject.text = "You Won!";
+        DeleteAll();
+    }
 	 void gameOver()
 	{
 		Text textobject = GameObject.Find("WinningText").GetComponent<Text>();
@@ -68,6 +77,6 @@ public class mouthScript : MonoBehaviour {
 			Destroy(spawnObjects[i]);
 		}		
 		timer = GameObject.Find("TimerText");
-		Destroy (timer);
+		
 	}
 }

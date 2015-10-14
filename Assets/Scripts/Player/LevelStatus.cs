@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class LevelStatus : MonoBehaviour
 {
-    public const float TOTAL_SECONDS = 10.0f;
+    public float TOTAL_SECONDS = 10.0f;
 
     public int EnemyCount;
 	public Text winText;

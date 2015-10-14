@@ -218,7 +218,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 63830296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -44.4000015}
+  m_LocalPosition: {x: 0, y: 1.39999998, z: -44.4000015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -332,7 +332,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aff18dede03dc884bbf749202dff7ab3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.60000002
+      value: 3.79999995
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aff18dede03dc884bbf749202dff7ab3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -584,6 +584,10 @@ Prefab:
       propertyPath: m_Name
       value: Player_NEW
       objectReference: {fileID: 0}
+    - target: {fileID: 11475992, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
+      propertyPath: spitSlider
+      value: 
+      objectReference: {fileID: 1488115557}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
   m_IsPrefabParent: 0
@@ -656,7 +660,7 @@ Transform:
   m_GameObject: {fileID: 648710401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 10, y: 10, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -699,7 +703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
-  dmg: 5
+  dmg: 4
 --- !u!1 &748974585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,7 +1023,7 @@ Transform:
   m_GameObject: {fileID: 1087508334}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
   m_LocalPosition: {x: 49.7999992, y: 4.0999999, z: -2}
-  m_LocalScale: {x: 100, y: 10, z: 1}
+  m_LocalScale: {x: 200, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -1109,10 +1113,10 @@ MonoBehaviour:
   aEnemy: {fileID: 107192, guid: a8cb991a5dc477a4bae34b9a3b89a729, type: 2}
   xMin: -30
   xMax: 40
-  zMin: 20
-  zMax: 25
+  zMin: 40
+  zMax: 90
   yMax: 2
-  numEnemies: 2
+  numEnemies: 5
   activeEnemies: 0
   SpawnON: 1
   rotateX: 0
@@ -1185,7 +1189,7 @@ Transform:
   m_GameObject: {fileID: 1239457679}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
   m_LocalPosition: {x: -48.7000008, y: 4.0999999, z: -2}
-  m_LocalScale: {x: 100, y: 10, z: 1}
+  m_LocalScale: {x: 200, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1524,6 +1528,14 @@ Prefab:
       propertyPath: crossHair
       value: 
       objectReference: {fileID: 1104625365}
+    - target: {fileID: 11416244, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
+      propertyPath: TOTAL_SECONDS
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416244, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
+      propertyPath: EnemyCount
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
   m_IsPrefabParent: 0
@@ -1629,7 +1641,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1531469654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.0999999, z: 47.2000008}
+  m_LocalPosition: {x: 0, y: 4.0999999, z: 96}
   m_LocalScale: {x: 100, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

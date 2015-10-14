@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/Enemy.meta
+guid: 10ce6a2f18f50634e9db1c85efa2f559
+folderAsset: yes
+timeCreated: 1444774898
+=======
 guid: 2306dc4c860e82042b8768ff6ae03262
 folderAsset: yes
 timeCreated: 1444753801
+>>>>>>> refs/remotes/origin/develop:Assets/Models/fantasySpider.meta
 licenseType: Free
 DefaultImporter:
   userData: 

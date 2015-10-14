@@ -76,7 +76,9 @@ public class mouthScript : MonoBehaviour {
 		{
 			Destroy(spawnObjects[i]);
 		}		
-		timer = GameObject.Find("TimerText");
 		
-	}
+        Text timerObject = GameObject.Find("TimerText").GetComponent<Text>();
+        timerObject.text = "Time: -0:00.00";
+
+    }
 }

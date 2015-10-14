@@ -8,15 +8,16 @@ using UnityEngine.UI;
 public class mouthScript : MonoBehaviour {
     public int health;
     public int dmg;
-	GameObject[] gameObjects;
+    bool gamedone = false;
+    GameObject[] gameObjects;
 	GameObject[] spawnObjects;
 	GameObject[] turretObjects;
 	GameObject timer;
 	// Use this for initialization
 	void Start () {
-		//GameObject canvas = GameObject.Find ("Canvas");
-
-	}
+        //GameObject canvas = GameObject.Find ("Canvas");
+       gamedone = false;
+    }
 
     void OnCollisionEnter(Collision touched)
     {
@@ -33,15 +34,17 @@ public class mouthScript : MonoBehaviour {
     void Update () {
 
         Text timerObject = GameObject.Find("TimerText").GetComponent<Text>();
-        if (timerObject.text == "Time: 0:00.00")
+        if (timerObject.text == "Time: 0:00.00" && gamedone == false)
         {
             gameWin();
+            gamedone = true;
         }
-        if (health <= 0)
+       else if (health <= 0)
         {
             Debug.Log("MOUTH IS DESTROYED");
             //Destroy(this.gameObject);
 			gameOver();
+            gamedone = true;
 
         }
 	}
@@ -78,7 +81,7 @@ public class mouthScript : MonoBehaviour {
 		}		
 		
         Text timerObject = GameObject.Find("TimerText").GetComponent<Text>();
-        timerObject.text = "Time: -0:00.00";
+        timerObject.text = "Time: 0:00.00";
 
     }
 }

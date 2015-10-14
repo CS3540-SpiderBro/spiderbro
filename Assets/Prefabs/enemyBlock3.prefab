@@ -23,8 +23,13 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400706}
+<<<<<<< HEAD
   - 114: {fileID: 11433208}
   - 54: {fileID: 5435342}
+=======
+  - 114: {fileID: 11495916}
+  - 33: {fileID: 3366156}
+>>>>>>> refs/remotes/origin/develop
   m_Layer: 0
   m_Name: enemyBlock3
   m_TagString: Enemy
@@ -147,12 +152,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177108}
   m_Mesh: {fileID: 4300000, guid: 94b4e8fb59f223742a88891b0b499c4e, type: 3}
+<<<<<<< HEAD
 --- !u!54 &5435342
 Rigidbody:
+=======
+--- !u!33 &3366156
+MeshFilter:
+>>>>>>> refs/remotes/origin/develop
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176044}
+<<<<<<< HEAD
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -162,6 +173,9 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+=======
+  m_Mesh: {fileID: 0}
+>>>>>>> refs/remotes/origin/develop
 --- !u!65 &6521200
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -174,7 +188,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .0795883015, y: .117855176, z: .116501279}
   m_Center: {x: 0, y: 7.45057971e-09, z: -.04023128}
+<<<<<<< HEAD
 --- !u!114 &11433208
+=======
+--- !u!114 &11495916
+>>>>>>> refs/remotes/origin/develop
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -182,6 +200,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 176044}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: b0f16518e17745d4a83c5dfd451e6b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -189,6 +208,13 @@ MonoBehaviour:
   targetTag: Mouth_Target
   modelTag: Mouth
   damage: 2
+=======
+  m_Script: {fileID: 11500000, guid: e68cb3daa03d8d14281c1072dae21e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xp: 0
+  is_alive: 0
+>>>>>>> refs/remotes/origin/develop
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -197,6 +223,7 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+<<<<<<< HEAD
       propertyPath: targetTag
       value: Mouth_Target
       objectReference: {fileID: 0}
@@ -216,6 +243,11 @@ Prefab:
       propertyPath: m_Constraints
       value: 126
       objectReference: {fileID: 0}
+=======
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 94b4e8fb59f223742a88891b0b499c4e, type: 3}
+>>>>>>> refs/remotes/origin/develop
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 176044}

@@ -1388,7 +1388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a082121cfe9343d4ab4a040fbbfa01e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aEnemy: {fileID: 107192, guid: a8cb991a5dc477a4bae34b9a3b89a729, type: 2}
+  aEnemy: {fileID: 109692, guid: 2a1690feb4cd63543abd592ef4f3a313, type: 2}
   xMin: -30
   xMax: 40
   zMin: 40
@@ -1397,7 +1397,7 @@ MonoBehaviour:
   numEnemies: 5
   activeEnemies: 0
   SpawnON: 1
-  rotateX: 0
+  rotateY: 0
 --- !u!1 &1239457679
 GameObject:
   m_ObjectHideFlags: 0

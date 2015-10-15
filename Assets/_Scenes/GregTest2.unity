@@ -757,6 +757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   dmg: 4
+  mouthHealthSlider: {fileID: 999513003}
 --- !u!1 &748974585
 GameObject:
   m_ObjectHideFlags: 0

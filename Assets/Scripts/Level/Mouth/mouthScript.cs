@@ -14,11 +14,14 @@ public class mouthScript : MonoBehaviour {
 	GameObject[] spawnObjects;
 	GameObject[] turretObjects;
 	GameObject timer;
+    public Slider mouthHealthSlider;
 	// Use this for initialization
 	void Start () {
         //GameObject canvas = GameObject.Find ("Canvas");
        gamedone = false;
        mouthDead = false;
+        mouthHealthSlider.maxValue = health;
+        mouthHealthSlider.value = health;
     }
 
     void OnCollisionEnter(Collision touched)
@@ -41,6 +44,7 @@ public class mouthScript : MonoBehaviour {
         //    gameWin();
         //    gamedone = true;
         //}
+        mouthHealthSlider.value = Mathf.Max(health, 0);
         if (health <= 0)
         {
             Debug.Log("MOUTH IS DESTROYED");

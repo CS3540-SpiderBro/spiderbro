@@ -23,25 +23,38 @@ public class LevelStatus : MonoBehaviour
     // Use this for initialization
     void Start () 
 	{
+
 		winText.text = "";
 		_killCount = 0;
 		gameOver = false;
         secondsLeft = TOTAL_SECONDS;
 		DisplayKillCount ();
-	}
+        mouth = GameObject.FindObjectOfType(typeof(mouthScript)) as mouthScript;
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
-		if (gameOver)
-			return;
+	    if (gameOver)
+	    {
+            Debug.Log("Gameover");
+	        if (Input.GetKeyDown(KeyCode.R))
+	        {
+                Application.LoadLevel(Application.loadedLevelName);
+            }
+	        return;
+	    }
+	
 
 		DisplayKillCount ();
-        mouth = GameObject.FindObjectOfType(typeof(mouthScript)) as mouthScript;
-        if(mouth.getStatus() == true)
+        
+        if(gameOver = mouth.IsDead())
         {
-            winText.text = "You Lost!!";//changed time is up to You have Won, and call DeleteAll method
-            DeleteAll();
+
+            UpdateWinText("You Lost!!");
+
+            return;
+
         }
         // decrease timer to 0
         secondsLeft = Mathf.Max(secondsLeft - Time.deltaTime, 0);
@@ -51,9 +64,9 @@ public class LevelStatus : MonoBehaviour
 
         if (gameOver = secondsLeft == 0)
 		{
-			Destroy(crossHair);
-			winText.text = "You have Won!!";//changed time is up to You have Won, and call DeleteAll method
-            DeleteAll();
+
+            UpdateWinText("You have Won!!");
+		    return;
 		} 
 		//else if ( gameOver = EnemyCount == _killCount)
 		//{
@@ -63,7 +76,14 @@ public class LevelStatus : MonoBehaviour
 
 	}
 
-	public void AddKill(int score = 1)
+    private void UpdateWinText(string message)
+    {
+        crossHair.text = string.Empty;
+        winText.text = string.Format("{0}\nPress 'R' to restart", message); //changed time is up to You have Won, and call DeleteAll method
+        DeleteAll();
+    }
+
+    public void AddKill(int score = 1)
 	{
 		++_killCount;
 		DisplayKillCount();

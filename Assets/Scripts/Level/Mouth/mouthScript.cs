@@ -43,7 +43,7 @@ public class mouthScript : MonoBehaviour {
         //}
         if (health <= 0)
         {
-            Debug.Log("MOUTH IS DESTROYED");
+            //Debug.Log("MOUTH IS DESTROYED");
             //Destroy(this.gameObject);
 			//gameOver();
             //gamedone = true;
@@ -57,7 +57,7 @@ public class mouthScript : MonoBehaviour {
         health = health - dam;
     }
 
-    public bool getStatus()
+    public bool IsDead()
     {
         return mouthDead;
     }

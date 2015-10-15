@@ -17,17 +17,11 @@ Controls:
 		Standard movements
 
 			Foward: 		up/w
-
 			Backward:		down/s
-	
-			Side step - left: 	left/a
-						
-			Side step - right:	right/d
-						
-			Jump: 			space
-					
-			Camera Direction: 	mouse direction
-					
+			Side step - left: 	left/a			
+			Side step - right:	right/d			
+			Jump: 			space		
+			Camera Direction: 	mouse direction		
 			Spit poision:		mouse right click
 			Bite:			mouse left click
 
@@ -38,7 +32,18 @@ https://github.com/CS3540-SpiderBro/spiderbro.git
 ### Version
 0.0.2
 
+### Plan for Milestone 3
 
+
+So far with Milestone 2 we have created a basic outline of the game with all major features functioning except for one major one: AI.  As a result, developing the AI will be a large part of finishing Milestone 3.  Milestone 3 will also include: developing attacks for 3 different enemy types, actual models for enemy units (instead of the cone things), attack3 for player character (web trap), more complicated spawning system (will spawn anywhere in level, but mostly on edges), full bedroom map, 
+
+#### List of features to be added:
+- Make scene look like a bedroom
+- Improved enemy AI: attack player
+- Player Health GUI
+- Possibly add third person view for player option
+- Add character attack 3 (web drop)
+- Add difficulty levels
 
 #### Credits
 Unity Engine: https://unity3d.com/

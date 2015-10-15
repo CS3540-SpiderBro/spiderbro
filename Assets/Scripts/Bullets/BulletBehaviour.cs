@@ -63,5 +63,6 @@ public class BulletBehaviour : MonoBehaviour {
 		col.gameObject.tag = "Dead";
 		Instantiate(bloodsplat, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(col.gameObject);
-	}
+        Destroy(col.transform.parent.gameObject);
+    }
 }

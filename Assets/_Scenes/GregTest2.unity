@@ -306,7 +306,7 @@ Transform:
   m_LocalScale: {x: 200, y: 1.55999994, z: 300}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
 --- !u!1 &245385846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,8 +1468,13 @@ Transform:
   m_LocalPosition: {x: -456.700012, y: -168.899994, z: -2}
   m_LocalScale: {x: 200.000015, y: 35, z: 1}
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 149847395}
   m_RootOrder: 0
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+>>>>>>> refs/remotes/origin/dcd_restart
 --- !u!1001 &1288823312
 Prefab:
   m_ObjectHideFlags: 0
@@ -1921,8 +1926,13 @@ Transform:
   m_LocalPosition: {x: -408, y: -168.899994, z: 96}
   m_LocalScale: {x: 100, y: 35, z: 1}
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 149847395}
   m_RootOrder: 1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+>>>>>>> refs/remotes/origin/dcd_restart
 --- !u!1001 &1586808430
 Prefab:
   m_ObjectHideFlags: 0
@@ -1968,15 +1978,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22413410, guid: 3b1ee298565e049efa396a7bd9cc2c50, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22413410, guid: 3b1ee298565e049efa396a7bd9cc2c50, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 288.700012
+      value: 289
       objectReference: {fileID: 0}
     - target: {fileID: 22413410, guid: 3b1ee298565e049efa396a7bd9cc2c50, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 22413410, guid: 3b1ee298565e049efa396a7bd9cc2c50, type: 2}
       propertyPath: m_AnchorMin.x
@@ -2510,7 +2520,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
 --- !u!1 &1854836135
 GameObject:
   m_ObjectHideFlags: 0

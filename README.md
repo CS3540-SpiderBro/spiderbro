@@ -31,7 +31,7 @@ Controls:
 https://github.com/CS3540-SpiderBro/spiderbro.git
 
 ### Version
-0.0.2
+0.1.0 (Milestone 2)
 
 ### Plan for Milestone 3
 

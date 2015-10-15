@@ -16,7 +16,9 @@ public class FpsShooting : MonoBehaviour {
 	void Start () 
 	{
         spitAmmo = SPIT_CAPACITY;
-	}
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {

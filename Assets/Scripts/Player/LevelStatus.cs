@@ -11,6 +11,7 @@ public class LevelStatus : MonoBehaviour
 	public Text killCountText;
 	public Text timerText;
 	public Text crossHair;
+    public KeyCode RestartKeyCode;
 
     GameObject[] gameObjects;
     GameObject[] spawnObjects;
@@ -38,7 +39,7 @@ public class LevelStatus : MonoBehaviour
 	    if (gameOver)
 	    {
             Debug.Log("Gameover");
-	        if (Input.GetKeyDown(KeyCode.R))
+	        if (Input.GetKeyDown(RestartKeyCode))
 	        {
                 Application.LoadLevel(Application.loadedLevelName);
             }

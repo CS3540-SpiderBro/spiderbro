@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System;
 
-
+//[RequireComponent(typeof(AudioSource))]
 public class BulletBehaviour : MonoBehaviour {
 
 	public float lifespan = 3.0f;
@@ -13,8 +13,15 @@ public class BulletBehaviour : MonoBehaviour {
     public GameObject bloodsplat;
     public GameObject Bulletsplat;
 
+	//public AudioClip killSound;
+	//private AudioSource source;
+
     // Use this for initialization
-    void Start () {
+    void Start () 
+	{
+		//init audio source
+		//source = GetComponent<AudioSource>();
+
 		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
 		if (gameControllerObject != null) 
 		{
@@ -59,9 +66,12 @@ public class BulletBehaviour : MonoBehaviour {
 		Destroy (gameObject);
 	}
 
-	void KillEnemy(Collision col){
+	void KillEnemy(Collision col)
+	{
+		//source.PlayOneShot (killSound, 1.0F); not working :/
 		col.gameObject.tag = "Dead";
 		Instantiate(bloodsplat, gameObject.transform.position, gameObject.transform.rotation);
+
         Destroy(col.gameObject);
         Destroy(col.transform.parent.gameObject);
     }

@@ -58,7 +58,7 @@ public class BiteAttack : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
 	{
 		/*biteAmmo = Mathf.Min(BITE_CAPACITY, biteAmmo + BITE_REGEN_RATE * Time.deltaTime);*/
 

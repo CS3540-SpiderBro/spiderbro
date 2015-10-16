@@ -45,6 +45,11 @@ public class LevelStatus : MonoBehaviour
             }
 	        return;
 	    }
+
+		if (Input.GetKeyDown ("f12")) 
+		{
+			Screen.fullScreen = true;
+		}
 	
 
 		DisplayKillCount ();

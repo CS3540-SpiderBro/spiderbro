@@ -11,7 +11,7 @@ SpiderBro project is a Unity based game, created by UVU students in the CS3540 G
 	
 **Controls:** 
 		
-	Character movements:
+	
 			
 		Standard movements
 

@@ -11,7 +11,10 @@ public class LevelStatus : MonoBehaviour
 	public Text killCountText;
 	public Text timerText;
 	public Text crossHair;
+    public GameObject pausePanel;
+    public KeyCode pauseKeyCode;
     public KeyCode RestartKeyCode;
+    public KeyCode QuitKeyCode;
 
     GameObject[] gameObjects;
     GameObject[] spawnObjects;
@@ -19,6 +22,8 @@ public class LevelStatus : MonoBehaviour
     private int _killCount;
 	private bool gameOver;
     private float secondsLeft;
+
+    public bool IsPaused { get; private set; }
 
 
     // Use this for initialization
@@ -31,25 +36,36 @@ public class LevelStatus : MonoBehaviour
         secondsLeft = TOTAL_SECONDS;
 		DisplayKillCount ();
         mouth = GameObject.FindObjectOfType(typeof(mouthScript)) as mouthScript;
+        pausePanel.SetActive(false);
     }
 	
 	// Update is called once per frame
-	void FixedUpdate () 
-	{
-	    if (gameOver)
-	    {
-            Debug.Log("Gameover");
-	        if (Input.GetKeyDown(RestartKeyCode))
-	        {
+	void FixedUpdate ()
+    {
+        if (Input.GetKeyDown(pauseKeyCode))
+        {
+            IsPaused = !IsPaused;
+            pausePanel.SetActive(IsPaused);
+            Time.timeScale = IsPaused ? 0 : 1;
+        }
+
+        if (Input.GetKeyDown("f12"))
+        {
+            Screen.fullScreen = true;
+        }
+
+        if(IsPaused)
+        {
+            if (Input.GetKeyDown(RestartKeyCode))
+            {
                 Application.LoadLevel(Application.loadedLevelName);
             }
-	        return;
-	    }
 
-		if (Input.GetKeyDown ("f12")) 
-		{
-			Screen.fullScreen = true;
-		}
+            if(Input.GetKeyDown(QuitKeyCode))
+            {
+                Application.Quit();
+            }
+        }
 	
 
 		DisplayKillCount ();

@@ -397,21 +397,29 @@ Prefab:
       propertyPath: m_Name
       value: HUDCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 22427454, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22427454, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 22495310, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22495310, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22427454, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22427454, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439122, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
+      propertyPath: m_Text
+      value: '[ESC] Resume
+
+        [R] Restart
+
+        [Q] Quit'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
@@ -786,6 +794,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+--- !u!1 &860997210 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 123680, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
+  m_PrefabInternal: {fileID: 518106104}
 --- !u!114 &999513003 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11434830, guid: 9864a7c8c19a582449c500c30f3ac14b,
@@ -1108,7 +1120,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 476370, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11416244, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
       propertyPath: winText
@@ -1118,33 +1130,21 @@ Prefab:
       propertyPath: killCountText
       value: 
       objectReference: {fileID: 1404665091}
-    - target: {fileID: 110692, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
-      propertyPath: m_TagString
-      value: GameController
-      objectReference: {fileID: 0}
     - target: {fileID: 11416244, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
       propertyPath: timerText
       value: 
       objectReference: {fileID: 1495138975}
     - target: {fileID: 11416244, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
-      propertyPath: timeSeconds
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 11416244, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
       propertyPath: crossHair
       value: 
       objectReference: {fileID: 1104625365}
     - target: {fileID: 11416244, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
-      propertyPath: TOTAL_SECONDS
-      value: 60
-      objectReference: {fileID: 0}
+      propertyPath: pausePanel
+      value: 
+      objectReference: {fileID: 860997210}
     - target: {fileID: 11416244, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
-      propertyPath: EnemyCount
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 11416244, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
-      propertyPath: RestartKeyCode
-      value: 114
+      propertyPath: QuitKeyCode
+      value: 113
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}

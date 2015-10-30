@@ -11,7 +11,7 @@ GameObject:
   - 114: {fileID: 11416244}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,12 +39,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870539f0178074631a72a82f3c8f4e6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyCount: 9
+  TOTAL_SECONDS: 60
+  EnemyCount: 100
   winText: {fileID: 0}
   killCountText: {fileID: 0}
   timerText: {fileID: 0}
   crossHair: {fileID: 0}
-  timeSeconds: 10
+  pausePanel: {fileID: 0}
+  pauseKeyCode: 27
+  RestartKeyCode: 114
+  QuitKeyCode: 113
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

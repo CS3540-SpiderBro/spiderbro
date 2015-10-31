@@ -37,10 +37,11 @@ public class LevelStatus : MonoBehaviour
 		DisplayKillCount ();
         mouth = GameObject.FindObjectOfType(typeof(mouthScript)) as mouthScript;
         pausePanel.SetActive(false);
+        Time.timeScale = 1;
     }
 	
 	// Update is called once per frame
-	void FixedUpdate ()
+	void Update ()
     {
         if (Input.GetKeyDown(pauseKeyCode))
         {
@@ -58,12 +59,14 @@ public class LevelStatus : MonoBehaviour
         {
             if (Input.GetKeyDown(RestartKeyCode))
             {
+                Time.timeScale = 1;
                 Application.LoadLevel(Application.loadedLevelName);
             }
 
             if(Input.GetKeyDown(QuitKeyCode))
             {
-                Application.Quit();
+                // Application.Quit();
+                Application.LoadLevel("Title");
             }
         }
 	

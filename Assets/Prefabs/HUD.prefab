@@ -659,7 +659,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: '[ESC] Resume
 
-    [R] Restart'
+    [R] Restart
+
+    [Q] Quit'
 --- !u!114 &11441410
 MonoBehaviour:
   m_ObjectHideFlags: 1

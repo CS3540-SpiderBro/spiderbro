@@ -11,36 +11,39 @@ public class spawner : MonoBehaviour {
     public int zMax;
     public int yMax;
     public int numEnemies;
-    public int activeEnemies;
+    public int spawntime = 5;
 	public bool SpawnON = true;
     public int rotateY;
     int enemyCount;
     
     // Use this for initialization
-    void Start () {       
-
+    void Start () {
+        StartCoroutine(spawn());
     }
 
     // Update is called once per frame
-    void Update () {
+    void FixedUpdate () {
         
-        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        Debug.Log(enemyCount);
-        if (activeEnemies <= 0 || enemyCount <= 1)
-        {
-            
-            // Do your enemy spawns here
-            for (int i = 0; i < numEnemies; i++)
-            {                
-                SpawnEnemy();
-            }
-            activeEnemies += numEnemies;
-            // Reset for next spawn
-           
-        }
+       
     }
 
+    IEnumerator spawn()
+    {
 
+        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        Debug.Log(enemyCount);
+        
+            while (true)
+            {
+                yield return new WaitForSeconds(spawntime);
+                for (int i = 0; i < numEnemies; i++)
+                {
+                yield return new WaitForSeconds(1);
+                SpawnEnemy();
+                }           
+        }
+    }
+   
 
     public void SpawnEnemy()
     {

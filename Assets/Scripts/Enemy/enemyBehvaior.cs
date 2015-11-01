@@ -18,21 +18,35 @@ public class enemyBehvaior : MonoBehaviour {
     // Use this for initialization
     void Start () {
         motherbase = GameObject.FindGameObjectWithTag(targetTag).transform.position;
-    }
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+        StartCoroutine(wait());
 
-        _direction = (motherbase - transform.position).normalized;
-        _lookRotation = Quaternion.LookRotation(_direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * RotationSpeed);
-        transform.position = Vector3.MoveTowards(transform.position, motherbase, speed);
+    }
+    IEnumerator wait()
+    {
+
+        yield return new WaitForSeconds(3);
+          
+    }
+    // Update is called once per frame
+    void Update () {
+
+        if(motherbase != null)
+        {
+            Move();
+        }
+        
             //Debug.Log("MOtherbase position" + motherbase);
             //Debug.Log("Enemy Position" + this.gameObject.transform.position);        
         
     }
 
-
+    void Move()
+    {
+        _direction = (motherbase - transform.position).normalized;
+        _lookRotation = Quaternion.LookRotation(_direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * RotationSpeed);
+        transform.position = Vector3.MoveTowards(transform.position, motherbase, speed);
+    }
     void OnCollisionEnter(Collision touched)
     {
        

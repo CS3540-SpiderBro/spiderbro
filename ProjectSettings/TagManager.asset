@@ -7,6 +7,10 @@ TagManager:
   - Enemy
   - Fire
   - Dead
+  - spawner
+  - Mouth
+  - Mouth_Target
+  - dzone
   layers:
   - Default
   - TransparentFX

@@ -35,7 +35,8 @@ public class BiteAttack : MonoBehaviour
 		col.gameObject.tag = "Dead";
 		Instantiate(bloodsplat, gameObject.transform.position, gameObject.transform.rotation);
 		Destroy(col.gameObject);
-	}
+        Destroy(col.transform.parent.gameObject);
+    }
 
 
 	// Use this for initialization
@@ -57,7 +58,7 @@ public class BiteAttack : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
 	{
 		/*biteAmmo = Mathf.Min(BITE_CAPACITY, biteAmmo + BITE_REGEN_RATE * Time.deltaTime);*/
 

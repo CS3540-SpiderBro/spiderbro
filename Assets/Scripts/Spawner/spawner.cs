@@ -13,7 +13,7 @@ public class spawner : MonoBehaviour {
     public int numEnemies;
     public int activeEnemies;
 	public bool SpawnON = true;
-    public int rotateX;
+    public int rotateY;
     int enemyCount;
     
     // Use this for initialization
@@ -47,7 +47,7 @@ public class spawner : MonoBehaviour {
 
         Vector3 newPos = new Vector3(Random.Range(xMin, xMax), yMax, Random.Range(zMin, zMax));
         //Debug.Log(newPos);
-		GameObject aEnemyClone = (GameObject) Instantiate(aEnemy, newPos, transform.rotation * Quaternion.Euler(rotateX, 0, 0));
+		GameObject aEnemyClone = (GameObject) Instantiate(aEnemy, newPos, transform.rotation * Quaternion.Euler(0, rotateY, 0));
         
        
     }

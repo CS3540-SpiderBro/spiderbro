@@ -1,44 +1,44 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &148264
+--- !u!1 &101432
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 438390}
-  - 33: {fileID: 3302834}
-  - 135: {fileID: 13510836}
-  - 23: {fileID: 2303714}
-  - 54: {fileID: 5416874}
-  - 114: {fileID: 11430578}
-  - 82: {fileID: 8295718}
+  - 4: {fileID: 486328}
+  - 33: {fileID: 3349814}
+  - 135: {fileID: 13513606}
+  - 23: {fileID: 2300746}
+  - 54: {fileID: 5450974}
+  - 114: {fileID: 11410316}
+  - 82: {fileID: 8200736}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Projectile_new
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &438390
+--- !u!4 &486328
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 148264}
+  m_GameObject: {fileID: 101432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.6565075, y: .444276333, z: -22.9798794}
+  m_LocalPosition: {x: -4.71291351, y: .0500000007, z: -3.23447561}
   m_LocalScale: {x: .300000012, y: .300000012, z: .300000012}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2303714
+--- !u!23 &2300746
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 148264}
+  m_GameObject: {fileID: 101432}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -57,19 +57,19 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3302834
+--- !u!33 &3349814
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 148264}
+  m_GameObject: {fileID: 101432}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &5416874
+--- !u!54 &5450974
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 148264}
+  m_GameObject: {fileID: 101432}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -79,12 +79,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!82 &8295718
+--- !u!82 &8200736
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 148264}
+  m_GameObject: {fileID: 101432}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -149,12 +149,12 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &11430578
+--- !u!114 &11410316
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 148264}
+  m_GameObject: {fileID: 101432}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3b8d1c522d2448cab0fe71215ac89d8, type: 3}
@@ -166,12 +166,12 @@ MonoBehaviour:
   bloodsplat: {fileID: 100000, guid: 80cd87e5e66b84b35b29f75198eeda8b, type: 2}
   Bulletsplat: {fileID: 128750, guid: c67e2d0f0dccd9e47a8dfea3f67eb459, type: 2}
   killSound: {fileID: 8300000, guid: 0de223b92cce77745b2dddff9bca1ce5, type: 3}
---- !u!135 &13510836
+--- !u!135 &13513606
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 148264}
+  m_GameObject: {fileID: 101432}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -184,58 +184,8 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: explode
-      value: 
-      objectReference: {fileID: 102136, guid: 401021acad276451fb3e2313658407f2, type: 2}
-    - target: {fileID: 0}
-      propertyPath: winText
-      value: 
-      objectReference: {fileID: 11478872, guid: 3b1ee298565e049efa396a7bd9cc2c50,
-        type: 2}
-    - target: {fileID: 0}
-      propertyPath: EnemyCount
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: killCountText
-      value: 
-      objectReference: {fileID: 11453216, guid: d2f2f871c7ff947928ee3f4230150664,
-        type: 2}
-    - target: {fileID: 0}
-      propertyPath: blood
-      value: 
-      objectReference: {fileID: 1500002, guid: 80cd87e5e66b84b35b29f75198eeda8b, type: 2}
-    - target: {fileID: 0}
-      propertyPath: bloodsplat
-      value: 
-      objectReference: {fileID: 100000, guid: 80cd87e5e66b84b35b29f75198eeda8b, type: 2}
-    - target: {fileID: 0}
-      propertyPath: m_LocalScale.x
-      value: .300000012
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalScale.y
-      value: .300000012
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalScale.z
-      value: .300000012
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: Bulletsplat
-      value: 
-      objectReference: {fileID: 128750, guid: c67e2d0f0dccd9e47a8dfea3f67eb459, type: 2}
-    - target: {fileID: 0}
-      propertyPath: killSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 0de223b92cce77745b2dddff9bca1ce5, type: 3}
+    m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 148264}
+  m_RootGameObject: {fileID: 101432}
   m_IsPrefabParent: 1

@@ -15,14 +15,13 @@ public class FirstPersonController : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		Cursor.lockState = CursorLockMode.Locked;
-		Cursor.visible = false;
 		characterController = GetComponent<CharacterController> ();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		RotateLeftRight ();
+	void Update ()
+    {
+        RotateLeftRight ();
 		RotateUpDown ();
 		Movement ();
 	}
@@ -38,12 +37,6 @@ public class FirstPersonController : MonoBehaviour {
 		Vector3 speed = new Vector3 (sideSpeed, vertVelocity, forwardSpeed);
 		speed = transform.rotation * speed;
 		characterController.Move (speed * Time.deltaTime);
-	}
-	
-	static void HideMouse ()
-	{
-		Cursor.lockState = CursorLockMode.Locked;
-		Cursor.visible = false;
 	}
 	
 	void RotateLeftRight ()

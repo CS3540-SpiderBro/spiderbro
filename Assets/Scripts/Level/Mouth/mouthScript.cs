@@ -30,7 +30,6 @@ public class mouthScript : MonoBehaviour {
         if (touched.gameObject.tag == "Enemy")
         {
             damage(dmg);
-            Debug.Log("MOUTH IS DAMAGED!!!!!");
             
         }
     }

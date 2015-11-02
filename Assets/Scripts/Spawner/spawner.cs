@@ -25,7 +25,6 @@ public class spawner : MonoBehaviour {
     void Update () {
         
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        Debug.Log(enemyCount);
         if (activeEnemies <= 0 || enemyCount <= 1)
         {
             

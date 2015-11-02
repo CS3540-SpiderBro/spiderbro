@@ -91,7 +91,7 @@ public class LevelStatus : MonoBehaviour
         // decrease timer to 0
         secondsLeft = Mathf.Max(secondsLeft - Time.deltaTime, 0);
         // set timer text
-        timerText.text = string.Format("Time: {0}:{1:00.00}", (int)(secondsLeft / 60), secondsLeft % 60);
+        timerText.text = string.Format("{0}:{1:00.00}", (int)(secondsLeft / 60), secondsLeft % 60);
 
 
         if (gameOver = secondsLeft == 0)
@@ -123,7 +123,7 @@ public class LevelStatus : MonoBehaviour
 
 	void DisplayKillCount()
 	{
-		killCountText.text = string.Format("Kill Count: {0}", _killCount.ToString());
+		killCountText.text = _killCount.ToString();
 		
 	}
 
@@ -141,7 +141,7 @@ public class LevelStatus : MonoBehaviour
             Destroy(spawnObjects[i]);
         }
               
-        timerText.text = "Time: 0:00.00";
+        timerText.text = "0:00.00";
 
     }
 }

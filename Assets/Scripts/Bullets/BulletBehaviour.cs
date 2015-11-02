@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System;
+using Assets.Scripts.Player;
 
 //[RequireComponent(typeof(AudioSource))]
 public class BulletBehaviour : MonoBehaviour {

@@ -1101,6 +1101,7 @@ GameObject:
   - 54: {fileID: 5465380}
   - 82: {fileID: 8270654}
   - 114: {fileID: 11475992}
+  - 82: {fileID: 8263842}
   m_Layer: 0
   m_Name: Player_New
   m_TagString: Player
@@ -1931,7 +1932,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 195590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.764961, y: 1.19000006, z: -4.49608755}
+  m_LocalPosition: {x: 17.6000004, y: 16.4400005, z: -18.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 419488}
@@ -2222,6 +2223,76 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!82 &8263842
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195590}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!82 &8270654
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2425,9 +2496,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5416874, guid: f23c7c2820f6efb418aff50c2055fc09, type: 2}
   spitSlider: {fileID: 0}
-  SPIT_CAPACITY: 3
-  SPIT_REGEN_RATE: 1
-  fireProjectile: {fileID: 0}
+  SPIT_CAPACITY: 20
+  SPIT_REGEN_RATE: 2
+  fireProjectile: {fileID: 8300000, guid: 4ada1d95302c8364db5f60bf7ad6e987, type: 3}
 --- !u!114 &11477712
 MonoBehaviour:
   m_ObjectHideFlags: 1

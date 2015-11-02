@@ -6,8 +6,7 @@ using UnityEngine.UI;
 /// mother base controls and actions when base is destroyed
 /// </summary>
 public class mouthScript : MonoBehaviour {
-    public int health;
-    public int dmg;
+    public int hitPoints;
     bool gamedone = false;
     bool mouthDead = false;
     GameObject[] gameObjects;
@@ -18,10 +17,10 @@ public class mouthScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //GameObject canvas = GameObject.Find ("Canvas");
-       gamedone = false;
-       mouthDead = false;
-        mouthHealthSlider.maxValue = health;
-        mouthHealthSlider.value = health;
+        gamedone = false;
+        mouthDead = false;
+        mouthHealthSlider.maxValue = hitPoints;
+        mouthHealthSlider.value = hitPoints;
     }
 
     void OnCollisionEnter(Collision touched)
@@ -29,7 +28,7 @@ public class mouthScript : MonoBehaviour {
 
         if (touched.gameObject.tag == "Enemy")
         {
-            damage(dmg);
+            hitPoints = hitPoints > 1 ? hitPoints - 1 : 0;
             
         }
     }
@@ -43,8 +42,8 @@ public class mouthScript : MonoBehaviour {
         //    gameWin();
         //    gamedone = true;
         //}
-        mouthHealthSlider.value = Mathf.Max(health, 0);
-        if (health <= 0)
+        mouthHealthSlider.value = hitPoints;
+        if (hitPoints <= 0)
         {
             //Debug.Log("MOUTH IS DESTROYED");
             //Destroy(this.gameObject);
@@ -54,11 +53,6 @@ public class mouthScript : MonoBehaviour {
 
         }
 	}
-
-    public void damage(int dam)
-    {
-        health = health - dam;
-    }
 
     public bool IsDead()
     {

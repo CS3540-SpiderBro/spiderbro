@@ -968,8 +968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 327646f161c22da429a64bee3cb7df16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
-  dmg: 4
+  hitPoints: 20
   mouthHealthSlider: {fileID: 650964736}
 --- !u!64 &638814900
 MeshCollider:
@@ -1176,80 +1175,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
---- !u!1 &833556613 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 195590, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
-  m_PrefabInternal: {fileID: 1971741471}
---- !u!82 &833556615
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 833556613}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!1 &836938564
 GameObject:
   m_ObjectHideFlags: 0
@@ -3080,20 +3005,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 486282, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
       propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 195590, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
-      propertyPath: m_Name
-      value: Player_NEW
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11475992, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
       propertyPath: spitSlider
       value: 
       objectReference: {fileID: 1337799656}
-    - target: {fileID: 11475992, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
-      propertyPath: fireProjectile
-      value: 
-      objectReference: {fileID: 8300000, guid: 4ada1d95302c8364db5f60bf7ad6e987, type: 3}
+    - target: {fileID: 195590, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
+      propertyPath: m_Name
+      value: Player_NEW
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
   m_IsPrefabParent: 0

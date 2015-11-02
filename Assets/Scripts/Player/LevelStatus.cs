@@ -139,8 +139,6 @@ namespace Assets.Scripts.Player
             {
                 Destroy(spawnObjects[i]);
             }
-              
-            timerText.text = "0:00.00";
 
         }
     }

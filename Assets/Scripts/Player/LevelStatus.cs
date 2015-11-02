@@ -48,7 +48,7 @@ public class LevelStatus : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKeyDown(pauseKeyCode))
+        if (Input.GetKeyDown(pauseKeyCode) && !gameOver)
         {
             IsPaused = !IsPaused;
             pausePanel.SetActive(IsPaused);
@@ -62,7 +62,7 @@ public class LevelStatus : MonoBehaviour
             Screen.fullScreen = true;
         }
 
-        if(IsPaused)
+        if(IsPaused || gameOver)
         {
             if (Input.GetKeyDown(RestartKeyCode))
             {
@@ -76,42 +76,36 @@ public class LevelStatus : MonoBehaviour
                 Application.LoadLevel("Title");
             }
         }
-	
 
-		DisplayKillCount ();
-        
-        if(gameOver = mouth.IsDead())
+        if (!gameOver)
         {
+            DisplayKillCount();
 
-            UpdateWinText("You Lost!!");
-
-            return;
-
+            if (mouth.IsDead())
+            {
+                gameOver = true;
+                UpdateWinText("You Lost!!");
+            }
+            else
+            {
+                // decrease timer to 0
+                secondsLeft = Mathf.Max(secondsLeft - Time.deltaTime, 0);
+                // set timer text
+                timerText.text = string.Format("{0}:{1:00.00}", (int)(secondsLeft / 60), secondsLeft % 60);
+                // see if game is over now
+                if (secondsLeft == 0)
+                {
+                    gameOver = true;
+                    UpdateWinText("You have Won!!");
+                }
+            }
         }
-        // decrease timer to 0
-        secondsLeft = Mathf.Max(secondsLeft - Time.deltaTime, 0);
-        // set timer text
-        timerText.text = string.Format("{0}:{1:00.00}", (int)(secondsLeft / 60), secondsLeft % 60);
-
-
-        if (gameOver = secondsLeft == 0)
-		{
-
-            UpdateWinText("You have Won!!");
-		    return;
-		} 
-		//else if ( gameOver = EnemyCount == _killCount)
-		//{
-		//	Destroy (crossHair);
-		//	winText.text = "You Win!";
-		//}
-
 	}
 
     private void UpdateWinText(string message)
     {
         crossHair.text = string.Empty;
-        winText.text = string.Format("{0}\nPress 'R' to restart", message); //changed time is up to You have Won, and call DeleteAll method
+        winText.text = message + "\nPress [R] to Restart";
         DeleteAll();
     }
 

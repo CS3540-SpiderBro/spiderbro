@@ -2330,7 +2330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ec5cf00ca181d45a42ba1870e148c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IsWalking: 0
+  m_IsWalking: 1
   m_WalkSpeed: 15
   m_RunSpeed: 25
   m_RunstepLenghten: .699999988
@@ -2411,6 +2411,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  paused: 0
 --- !u!114 &11475992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2426,6 +2427,7 @@ MonoBehaviour:
   spitSlider: {fileID: 0}
   SPIT_CAPACITY: 3
   SPIT_REGEN_RATE: 1
+  fireProjectile: {fileID: 0}
 --- !u!114 &11477712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2547,7 +2549,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_IsWalking
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 195590}

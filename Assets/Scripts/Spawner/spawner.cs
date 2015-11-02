@@ -12,7 +12,7 @@ public class spawner : MonoBehaviour {
     public int yMax;
     public int numEnemies;
     public int spawntime = 5;
-	public bool SpawnON = true;
+    public bool SpawnON = true;
     public int rotateY;
     int enemyCount;
     
@@ -33,14 +33,14 @@ public class spawner : MonoBehaviour {
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
         Debug.Log(enemyCount);
         
-            while (true)
+        while (true)
+        {
+            yield return new WaitForSeconds(spawntime);
+            for (int i = 0; i < numEnemies; i++)
             {
-                yield return new WaitForSeconds(spawntime);
-                for (int i = 0; i < numEnemies; i++)
-                {
                 yield return new WaitForSeconds(1);
                 SpawnEnemy();
-                }           
+            }           
         }
     }
    
@@ -50,13 +50,11 @@ public class spawner : MonoBehaviour {
 
         Vector3 newPos = new Vector3(Random.Range(xMin, xMax), yMax, Random.Range(zMin, zMax));
         //Debug.Log(newPos);
-		GameObject aEnemyClone = (GameObject) Instantiate(aEnemy, newPos, transform.rotation * Quaternion.Euler(0, rotateY, 0));
-        
-       
+        GameObject aEnemyClone = (GameObject) Instantiate(aEnemy, newPos, transform.rotation * Quaternion.Euler(0, rotateY, 0));
     }
 
-	public void switchSpawn(bool state)
-	{
-		SpawnON = state;
-	}
+    public void switchSpawn(bool state)
+    {
+        SpawnON = state;
+    }
 }

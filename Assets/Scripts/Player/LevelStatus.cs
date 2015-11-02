@@ -1,122 +1,148 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
+using FirstPersonController = UnityStandardAssets.Characters.FirstPerson.FirstPersonController;
+
 //added code from mouthScript into here - Greg
-public class LevelStatus : MonoBehaviour
+
+namespace Assets.Scripts.Player
 {
-    public float TOTAL_SECONDS = 10.0f;
+    public class LevelStatus : MonoBehaviour
+    {
+        public float TOTAL_SECONDS = 10.0f;
 
-    public int EnemyCount;
-	public Text winText;
-	public Text killCountText;
-	public Text timerText;
-	public Text crossHair;
-    public KeyCode RestartKeyCode;
+        public int EnemyCount;
+        public Text winText;
+        public Text killCountText;
+        public Text timerText;
+        public Text crossHair;
+        public GameObject pausePanel;
+        public KeyCode pauseKeyCode;
+        public KeyCode RestartKeyCode;
+        public KeyCode QuitKeyCode;
 
-    GameObject[] gameObjects;
-    GameObject[] spawnObjects;
-    mouthScript mouth;
-    private int _killCount;
-	private bool gameOver;
-    private float secondsLeft;
+        GameObject[] gameObjects;
+        GameObject[] spawnObjects;
+        mouthScript mouth;
+        private int _killCount;
+        private bool gameOver;
+        private float secondsLeft;
+        private FirstPersonController fpsController;
+
+        public bool IsPaused { get; private set; }
 
 
-    // Use this for initialization
-    void Start () 
-	{
+        // Use this for initialization
+        void Start () 
+        {
 
-		winText.text = "";
-		_killCount = 0;
-		gameOver = false;
-        secondsLeft = TOTAL_SECONDS;
-		DisplayKillCount ();
-        mouth = GameObject.FindObjectOfType(typeof(mouthScript)) as mouthScript;
-    }
+            winText.text = "";
+            _killCount = 0;
+            gameOver = false;
+            secondsLeft = TOTAL_SECONDS;
+            DisplayKillCount ();
+            mouth = GameObject.FindObjectOfType(typeof(mouthScript)) as mouthScript;
+            pausePanel.SetActive(false);
+            Time.timeScale = 1;
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+            fpsController = FindObjectOfType(typeof(FirstPersonController)) as FirstPersonController;
+        }
 	
-	// Update is called once per frame
-	void FixedUpdate () 
-	{
-	    if (gameOver)
-	    {
-            Debug.Log("Gameover");
-	        if (Input.GetKeyDown(RestartKeyCode))
-	        {
-                Application.LoadLevel(Application.loadedLevelName);
+        // Update is called once per frame
+        void Update ()
+        {
+        if (Input.GetKeyDown(pauseKeyCode) && !gameOver)
+            {
+                IsPaused = !IsPaused;
+                pausePanel.SetActive(IsPaused);
+                Time.timeScale = IsPaused ? 0 : 1;
+                Cursor.lockState = IsPaused ? CursorLockMode.None : CursorLockMode.Locked;
+                Cursor.visible = fpsController.paused = IsPaused;
             }
-	        return;
-	    }
 
-		if (Input.GetKeyDown ("f12")) 
-		{
-			Screen.fullScreen = true;
-		}
-	
+            if (Input.GetKeyDown("f12"))
+            {
+                Screen.fullScreen = true;
+            }
 
-		DisplayKillCount ();
-        
-        if(gameOver = mouth.IsDead())
+        if(IsPaused || gameOver)
+            {
+                if (Input.GetKeyDown(RestartKeyCode))
+                {
+                    Time.timeScale = 1;
+                    Application.LoadLevel(Application.loadedLevelName);
+                }
+
+                if(Input.GetKeyDown(QuitKeyCode))
+                {
+                    // Application.Quit();
+                    Application.LoadLevel("Title");
+                }
+            }
+
+        if (!gameOver)
         {
+            DisplayKillCount();
 
-            UpdateWinText("You Lost!!");
-
-            return;
-
+            if (mouth.IsDead())
+            {
+                gameOver = true;
+                UpdateWinText("You Lost!!");
+            }
+            else
+            {
+                // decrease timer to 0
+                secondsLeft = Mathf.Max(secondsLeft - Time.deltaTime, 0);
+                // set timer text
+                timerText.text = string.Format("{0}:{1:00.00}", (int)(secondsLeft / 60), secondsLeft % 60);
+                // see if game is over now
+                if (secondsLeft == 0)
+                {
+                    gameOver = true;
+                    UpdateWinText("You have Won!!");
+                }
+            }
         }
-        // decrease timer to 0
-        secondsLeft = Mathf.Max(secondsLeft - Time.deltaTime, 0);
-        // set timer text
-        timerText.text = string.Format("Time: {0}:{1:00.00}", (int)(secondsLeft / 60), secondsLeft % 60);
+        }
 
+        private void UpdateWinText(string message)
+        {
+            crossHair.text = string.Empty;
+            winText.text = message + "\nPress [R] to Restart";
+            DeleteAll();
+        }
 
-        if (gameOver = secondsLeft == 0)
-		{
+        public void AddKill(int score = 1)
+        {
+            ++_killCount;
+            DisplayKillCount();
+        }
 
-            UpdateWinText("You have Won!!");
-		    return;
-		} 
-		//else if ( gameOver = EnemyCount == _killCount)
-		//{
-		//	Destroy (crossHair);
-		//	winText.text = "You Win!";
-		//}
-
-	}
-
-    private void UpdateWinText(string message)
-    {
-        crossHair.text = string.Empty;
-        winText.text = string.Format("{0}\nPress 'R' to restart", message); //changed time is up to You have Won, and call DeleteAll method
-        DeleteAll();
-    }
-
-    public void AddKill(int score = 1)
-	{
-		++_killCount;
-		DisplayKillCount();
-	}
-
-	void DisplayKillCount()
-	{
-		killCountText.text = string.Format("Kill Count: {0}", _killCount.ToString());
+        void DisplayKillCount()
+        {
+		killCountText.text = _killCount.ToString();
 		
-	}
+        }
 
 
-    void DeleteAll()
-    {
-        gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
-        for (int i = 0; i < gameObjects.Length; i++)
+        void DeleteAll()
         {
-            Destroy(gameObjects[i]);
-        }
-        spawnObjects = GameObject.FindGameObjectsWithTag("spawner");
-        for (int i = 0; i < spawnObjects.Length; i++)
-        {
-            Destroy(spawnObjects[i]);
-        }
+            gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+            for (int i = 0; i < gameObjects.Length; i++)
+            {
+                Destroy(gameObjects[i]);
+            }
+            spawnObjects = GameObject.FindGameObjectsWithTag("spawner");
+            for (int i = 0; i < spawnObjects.Length; i++)
+            {
+                Destroy(spawnObjects[i]);
+            }
               
-        timerText.text = "Time: 0:00.00";
+            timerText.text = "0:00.00";
 
+        }
     }
 }
 

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts.Player;
 
 [RequireComponent(typeof(AudioSource))]
 public class BiteAttack : MonoBehaviour 

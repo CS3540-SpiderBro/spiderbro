@@ -53,8 +53,7 @@ namespace Assets.Scripts.Player
         // Update is called once per frame
         void Update ()
         {
-
-            if (Input.GetKeyDown(pauseKeyCode))
+        if (Input.GetKeyDown(pauseKeyCode) && !gameOver)
             {
                 IsPaused = !IsPaused;
                 pausePanel.SetActive(IsPaused);
@@ -68,7 +67,7 @@ namespace Assets.Scripts.Player
                 Screen.fullScreen = true;
             }
 
-            if(IsPaused)
+        if(IsPaused || gameOver)
             {
                 if (Input.GetKeyDown(RestartKeyCode))
                 {
@@ -82,42 +81,36 @@ namespace Assets.Scripts.Player
                     Application.LoadLevel("Title");
                 }
             }
-	
 
-            DisplayKillCount ();
-        
-            if(gameOver = mouth.IsDead())
+        if (!gameOver)
+        {
+            DisplayKillCount();
+
+            if (mouth.IsDead())
             {
-
+                gameOver = true;
                 UpdateWinText("You Lost!!");
-
-                return;
-
             }
-            // decrease timer to 0
-            secondsLeft = Mathf.Max(secondsLeft - Time.deltaTime, 0);
-            // set timer text
-            timerText.text = string.Format("Time: {0}:{1:00.00}", (int)(secondsLeft / 60), secondsLeft % 60);
-
-
-            if (gameOver = secondsLeft == 0)
+            else
             {
-
-                UpdateWinText("You have Won!!");
-                return;
-            } 
-            //else if ( gameOver = EnemyCount == _killCount)
-            //{
-            //	Destroy (crossHair);
-            //	winText.text = "You Win!";
-            //}
-
+                // decrease timer to 0
+                secondsLeft = Mathf.Max(secondsLeft - Time.deltaTime, 0);
+                // set timer text
+                timerText.text = string.Format("{0}:{1:00.00}", (int)(secondsLeft / 60), secondsLeft % 60);
+                // see if game is over now
+                if (secondsLeft == 0)
+                {
+                    gameOver = true;
+                    UpdateWinText("You have Won!!");
+                }
+            }
+        }
         }
 
         private void UpdateWinText(string message)
         {
             crossHair.text = string.Empty;
-            winText.text = string.Format("{0}\nPress 'R' to restart", message); //changed time is up to You have Won, and call DeleteAll method
+            winText.text = message + "\nPress [R] to Restart";
             DeleteAll();
         }
 
@@ -129,7 +122,7 @@ namespace Assets.Scripts.Player
 
         void DisplayKillCount()
         {
-            killCountText.text = string.Format("Kill Count: {0}", _killCount.ToString());
+		killCountText.text = _killCount.ToString();
 		
         }
 
@@ -147,7 +140,7 @@ namespace Assets.Scripts.Player
                 Destroy(spawnObjects[i]);
             }
               
-            timerText.text = "Time: 0:00.00";
+            timerText.text = "0:00.00";
 
         }
     }

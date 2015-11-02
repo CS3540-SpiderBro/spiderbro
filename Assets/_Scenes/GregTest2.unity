@@ -983,12 +983,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsWalking: 0
-  m_WalkSpeed: 0
-  m_RunSpeed: 0
-  m_RunstepLenghten: 0
-  m_JumpSpeed: 0
-  m_StickToGroundForce: 0
-  m_GravityMultiplier: 0
+  m_WalkSpeed: 15
+  m_RunSpeed: 25
+  m_RunstepLenghten: .699999988
+  m_JumpSpeed: 15
+  m_StickToGroundForce: 8
+  m_GravityMultiplier: 2
   m_MouseLook:
     XSensitivity: 2
     YSensitivity: 2
@@ -1006,13 +1006,23 @@ MonoBehaviour:
     TimeToDecrease: 1
     IncreaseCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-  m_UseHeadBob: 0
+  m_UseHeadBob: 1
   m_HeadBob:
-    HorizontalBobRange: .330000013
-    VerticalBobRange: .330000013
+    HorizontalBobRange: .100000001
+    VerticalBobRange: .100000001
     Bobcurve:
       serializedVersion: 2
       m_Curve:
@@ -1043,14 +1053,16 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-    VerticaltoHorizontalRatio: 1
+    VerticaltoHorizontalRatio: 2
   m_JumpBob:
-    BobDuration: 0
-    BobAmount: 0
-  m_StepInterval: 0
-  m_FootstepSounds: []
-  m_JumpSound: {fileID: 0}
-  m_LandSound: {fileID: 0}
+    BobDuration: .200000003
+    BobAmount: .100000001
+  m_StepInterval: 5
+  m_FootstepSounds:
+  - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
+  - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+  m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
+  m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
   paused: 0
 --- !u!143 &614972075
 CharacterController:
@@ -2496,8 +2508,7 @@ Transform:
   m_LocalRotation: {x: .0233049542, y: -.00972632784, z: .000751094136, w: .999680817}
   m_LocalPosition: {x: -.0512149408, y: -.118363075, z: -.448502809}
   m_LocalScale: {x: 1, y: 1, z: .999999762}
-  m_Children:
-  - {fileID: 1165507530}
+  m_Children: []
   m_Father: {fileID: 491917513}
   m_RootOrder: 0
 --- !u!1 &1269608809
@@ -3640,8 +3651,7 @@ Transform:
   m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
   m_LocalPosition: {x: -.39252606, y: .0546679683, z: -.516579866}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1139234262}
+  m_Children: []
   m_Father: {fileID: 2069043314}
   m_RootOrder: 8
 --- !u!1 &1952231719

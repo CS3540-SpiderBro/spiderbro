@@ -39,14 +39,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870539f0178074631a72a82f3c8f4e6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TOTAL_SECONDS: 60
+  TOTAL_SECONDS: 180
   EnemyCount: 100
   winText: {fileID: 0}
   killCountText: {fileID: 0}
   timerText: {fileID: 0}
   crossHair: {fileID: 0}
   pausePanel: {fileID: 0}
-  pauseKeyCode: 27
+  pauseKeyCode: 112
   RestartKeyCode: 114
   QuitKeyCode: 113
 --- !u!1001 &100100000

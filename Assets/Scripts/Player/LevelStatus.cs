@@ -22,6 +22,7 @@ public class LevelStatus : MonoBehaviour
     private int _killCount;
 	private bool gameOver;
     private float secondsLeft;
+    private FirstPersonController fpsController;
 
     public bool IsPaused { get; private set; }
 
@@ -38,6 +39,10 @@ public class LevelStatus : MonoBehaviour
         mouth = GameObject.FindObjectOfType(typeof(mouthScript)) as mouthScript;
         pausePanel.SetActive(false);
         Time.timeScale = 1;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        fpsController = GetComponent<FirstPersonController>();
     }
 	
 	// Update is called once per frame
@@ -48,6 +53,8 @@ public class LevelStatus : MonoBehaviour
             IsPaused = !IsPaused;
             pausePanel.SetActive(IsPaused);
             Time.timeScale = IsPaused ? 0 : 1;
+            Cursor.lockState = IsPaused ? CursorLockMode.None : CursorLockMode.Locked;
+            Cursor.visible = IsPaused;
         }
 
         if (Input.GetKeyDown("f12"))

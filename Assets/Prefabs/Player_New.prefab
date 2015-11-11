@@ -2510,7 +2510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 204fef9215f5a5f42a777bacfc6f3966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  biteSound: {fileID: 8300000, guid: 0de223b92cce77745b2dddff9bca1ce5, type: 3}
+  biteSound: {fileID: 8300000, guid: f8ebb884023eded479284e0828e97a4a, type: 3}
   attemptBite: {fileID: 8300000, guid: baa10586f06aa3c4ba111508c69bccbb, type: 3}
   bloodsplat: {fileID: 100000, guid: 80cd87e5e66b84b35b29f75198eeda8b, type: 2}
   levelStatus: {fileID: 0}

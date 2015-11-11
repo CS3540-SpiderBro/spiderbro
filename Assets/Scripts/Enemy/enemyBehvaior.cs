@@ -3,6 +3,9 @@ using System.Collections;
 /// <summary>
 /// move enemies towards motherbase and delete them when collide with base
 /// </summary>
+/// 
+
+[RequireComponent(typeof(AudioSource))]
 public class enemyBehvaior : MonoBehaviour {
 
     public float speed = 5.0f; // move speed
@@ -15,12 +18,18 @@ public class enemyBehvaior : MonoBehaviour {
     private Quaternion _lookRotation;
     private Vector3 _direction;
 
+	//for sounds
+	public AudioClip deathSound;
+	private AudioSource source;
+
     // Use this for initialization
-    void Start () {
+    void Start () 
+	{
         motherbase = GameObject.FindGameObjectWithTag(targetTag).transform.position;
         StartCoroutine(wait());
 
     }
+
     IEnumerator wait()
     {
 
@@ -28,7 +37,15 @@ public class enemyBehvaior : MonoBehaviour {
           
     }
     // Update is called once per frame
-    void Update () {
+    void FixedUpdate () 
+	{
+
+		if (this.gameObject.tag == "Dead") 
+		{
+			Debug.Log("PLAY DEATH SOUND enemyBehavior.cs");
+			source.PlayOneShot (deathSound,1.0F);
+			//stuff
+		}
 
         if(motherbase != null)
         {

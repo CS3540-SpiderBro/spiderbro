@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using System;
 using Assets.Scripts.Player;
 
-//[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(AudioSource))]
 public class BulletBehaviour : MonoBehaviour {
 
 	public float lifespan = 3.0f;
@@ -14,7 +14,7 @@ public class BulletBehaviour : MonoBehaviour {
     public GameObject bloodsplat;
     public GameObject Bulletsplat;
 
-	//public AudioClip killSound;
+	//public AudioClip deathSound;
 	//private AudioSource source;
 
     // Use this for initialization
@@ -36,8 +36,10 @@ public class BulletBehaviour : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
-		if ((lifespan -= Time.deltaTime) <= 0) {
+	void FixedUpdate () 
+	{
+		if ((lifespan -= Time.deltaTime) <= 0) 
+		{
 			Disappear ();
 		}
 
@@ -69,7 +71,7 @@ public class BulletBehaviour : MonoBehaviour {
 
 	void KillEnemy(Collision col)
 	{
-		//source.PlayOneShot (killSound, 1.0F); not working :/
+		//source.PlayOneShot (deathSound,1.0F);
 		col.gameObject.tag = "Dead";
 		Instantiate(bloodsplat, gameObject.transform.position, gameObject.transform.rotation);
 

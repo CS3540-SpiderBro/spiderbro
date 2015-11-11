@@ -14,6 +14,7 @@ public class FpsShooting : MonoBehaviour {
     private float spitAmmo;
 
 	public AudioClip fireProjectile;
+	//public AudioClip deathbyProjectile; put else where source.PlayOneShot (deathbyProjectile,1.0F);
 	private AudioSource source;
 
 	// Use this for initialization
@@ -33,6 +34,7 @@ public class FpsShooting : MonoBehaviour {
 		if (Input.GetButtonDown("Fire2") && spitAmmo >= 1f)
 		{
 			source.PlayOneShot (fireProjectile, 1.0F);
+
 
 			Camera cam = Camera.main;
 			Rigidbody projectile = (Rigidbody)Instantiate (bullet, cam.transform.position + cam.transform.forward, cam.transform.rotation);

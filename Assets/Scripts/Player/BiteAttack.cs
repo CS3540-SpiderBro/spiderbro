@@ -27,12 +27,16 @@ public class BiteAttack : MonoBehaviour
 		{
 			enemy_in_range = true;
 			myEnemy = other;
-		}
+		} 
+
+		else
+			enemy_in_range = false;
 
 	}
 
 	void KillEnemy(Collider col)
 	{
+		source.PlayOneShot (biteSound, 1.0F); //play collision attack sound
 		col.gameObject.tag = "Dead";
 		Instantiate(bloodsplat, gameObject.transform.position, gameObject.transform.rotation);
 		Destroy(col.gameObject);
@@ -63,15 +67,16 @@ public class BiteAttack : MonoBehaviour
 	{
 		/*biteAmmo = Mathf.Min(BITE_CAPACITY, biteAmmo + BITE_REGEN_RATE * Time.deltaTime);*/
 
-		if(Input.GetButtonDown("Fire1") /*&& biteAmmo >= 0.25f*/)
-			source.PlayOneShot (attemptBite, 1.0F);
+		//if(Input.GetButtonDown("Fire1") /*&& biteAmmo >= 0.25f*/)
+			//source.PlayOneShot (attemptBite, 1.0F);
 
 		if (Input.GetButtonDown ("Fire1")) 
 		{
+			source.PlayOneShot (attemptBite, 1.0F);	//attempted fire
 
 			if(enemy_in_range == true)
 			{
-				source.PlayOneShot (biteSound, 1.0F); //play collision attack sound
+
 
 				//broken to be fixed later maybe
 				/*EnemyStats.hp += -50;	//do 50 dmg
@@ -90,9 +95,7 @@ public class BiteAttack : MonoBehaviour
 
 			}
 
-			else
-				source.PlayOneShot (attemptBite, 1.0F);	//attempted fire
 		}
 
-	}
+	}//fixedupdate()
 }

@@ -31,20 +31,27 @@ SpiderBro project is a Unity based game, created by UVU students in the CS3540 G
 https://github.com/CS3540-SpiderBro/spiderbro.git
 
 ### Version
-0.1.1 (Milestone 2)
+0.3.0 (Milestone 3)
 
 ### Plan for Milestone 3
 
 
-So far with Milestone 2 we have created a basic outline of the game with all major features functioning except for one major one: AI.  As a result, developing the AI will be a large part of finishing Milestone 3.  Milestone 3 will also include: developing attacks for 3 different enemy types, actual models for enemy units (instead of the cylinder), a new attack type for the player (web trap), more complicated spawning system, and a full bedroom map, we also plan to adjust additional features based on play testing.
+So far with Milestone 3 we have created a basic outline of the game with a somewhat detailed level.  All features except some planned AI changes, general polishing and features from our play testing have been implemented. For Milestone 4, a large part of the development process will be implementing the nest module into the current spawning system and improving the AI.  We may also add additional levels and a third attack option.  
+
+### Plan for Milestone 4
 
 #### List of features to be added:
-- Make scene look like a bedroom
-- Improved enemy AI: attack player
+- Improved enemy AI: attack/flee from player
 - Player Health GUI
 - Possibly add third person view for player option
 - Add character attack 3 (web drop)
-- Add difficulty levels
+- Add additional levels
+- Add 2 enemy types in addition to the current drones
+- Implement an HP/Damage system, instead of insta kills
+- Nest spawning system
+- Complicated AI : see design doc
+- Fixing Animations
+- Additional Sounds/Noises
 
 #### Credits
 Unity Engine: https://unity3d.com/

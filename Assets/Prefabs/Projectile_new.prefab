@@ -165,7 +165,7 @@ MonoBehaviour:
   levelStatus: {fileID: 0}
   bloodsplat: {fileID: 100000, guid: 80cd87e5e66b84b35b29f75198eeda8b, type: 2}
   Bulletsplat: {fileID: 128750, guid: c67e2d0f0dccd9e47a8dfea3f67eb459, type: 2}
-  killSound: {fileID: 8300000, guid: 0de223b92cce77745b2dddff9bca1ce5, type: 3}
+  deathSound: {fileID: 8300000, guid: f8ebb884023eded479284e0828e97a4a, type: 3}
 --- !u!135 &13513606
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -184,7 +184,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f8ebb884023eded479284e0828e97a4a, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 101432}

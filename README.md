@@ -31,7 +31,7 @@ SpiderBro project is a Unity based game, created by UVU students in the CS3540 G
 https://github.com/CS3540-SpiderBro/spiderbro.git
 
 ### Version
-0.1.1 (Milestone 2)
+0.3.0 (Milestone 3)
 
 ### Plan for Milestone 3
 

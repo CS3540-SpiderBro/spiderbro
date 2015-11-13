@@ -46,6 +46,14 @@ So far with Milestone 2 we have created a basic outline of the game with all maj
 - Add character attack 3 (web drop)
 - Add difficulty levels
 
+### Plan for Milestone 4
+
+#### Features to add:
+- Nest spawning system
+- Complicated AI : see design doc
+- Fixing Animations
+- Additional Sounds/Noises
+
 #### Credits
 Unity Engine: https://unity3d.com/
 

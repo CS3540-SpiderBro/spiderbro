@@ -31,7 +31,7 @@ SpiderBro project is a Unity based game, created by UVU students in the CS3540 G
 https://github.com/CS3540-SpiderBro/spiderbro.git
 
 ### Version
-0.1.1 (Milestone 2)
+0.3.0 (Milestone 3)
 
 ### Plan for Milestone 3
 
@@ -45,6 +45,14 @@ So far with Milestone 2 we have created a basic outline of the game with all maj
 - Possibly add third person view for player option
 - Add character attack 3 (web drop)
 - Add difficulty levels
+
+### Plan for Milestone 4
+
+#### Features to add:
+- Nest spawning system
+- Complicated AI : see design doc
+- Fixing Animations
+- Additional Sounds/Noises
 
 #### Credits
 Unity Engine: https://unity3d.com/

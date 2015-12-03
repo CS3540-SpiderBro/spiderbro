@@ -61,6 +61,22 @@ public class BulletBehaviour : MonoBehaviour {
 			}
 
 		}
+        else if(col.gameObject.CompareTag("DeadReady"))
+        {
+            try
+            {
+
+                KillEnemy(col);
+                levelStatus.AddKill();
+                Debug.Log("Killing queen");
+
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e.Message);
+            }
+        }
+        Debug.Log(col.gameObject.tag);
         Destroy(gameObject);
     }
 

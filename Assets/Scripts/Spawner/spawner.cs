@@ -5,15 +5,12 @@ using System.Collections;
 /// </summary>
 public class spawner : MonoBehaviour {
     public GameObject aEnemy;
-    public int xMin;
-    public int xMax;
-    public int zMin;
-    public int zMax;
-    public int yMax;
+   
     public int numEnemies;
     public int spawntime = 5;
     public bool SpawnON = true;
     public int rotateY;
+    public GameObject SpawnBaseObject;
     int enemyCount;
     
     // Use this for initialization
@@ -47,10 +44,7 @@ public class spawner : MonoBehaviour {
 
     public void SpawnEnemy()
     {
-
-        Vector3 newPos = new Vector3(Random.Range(xMin, xMax), yMax, Random.Range(zMin, zMax));
-        //Debug.Log(newPos);
-        GameObject aEnemyClone = (GameObject) Instantiate(aEnemy, newPos, transform.rotation * Quaternion.Euler(0, rotateY, 0));
+        GameObject aEnemyClone = (GameObject) Instantiate(aEnemy, SpawnBaseObject.transform.position, transform.rotation * Quaternion.Euler(0, rotateY, 0));
     }
 
     public void switchSpawn(bool state)

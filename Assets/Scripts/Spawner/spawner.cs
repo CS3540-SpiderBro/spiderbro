@@ -12,6 +12,7 @@ public class spawner : MonoBehaviour {
     public int rotateY;
     public GameObject SpawnBaseObject;
     int enemyCount;
+    public Transform spawnOrigin;
     
     // Use this for initialization
     void Start () {
@@ -44,6 +45,7 @@ public class spawner : MonoBehaviour {
 
     public void SpawnEnemy()
     {
+        //var origTr = spawnOrigin.transform.position;
         GameObject aEnemyClone = (GameObject) Instantiate(aEnemy, SpawnBaseObject.transform.position, transform.rotation * Quaternion.Euler(0, rotateY, 0));
     }
 

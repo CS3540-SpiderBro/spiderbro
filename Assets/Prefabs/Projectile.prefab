@@ -16,7 +16,7 @@ GameObject:
   - 82: {fileID: 8295718}
   m_Layer: 0
   m_Name: Projectile
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,7 +165,6 @@ MonoBehaviour:
   levelStatus: {fileID: 0}
   bloodsplat: {fileID: 100000, guid: 80cd87e5e66b84b35b29f75198eeda8b, type: 2}
   Bulletsplat: {fileID: 128750, guid: c67e2d0f0dccd9e47a8dfea3f67eb459, type: 2}
-  deathSound: {fileID: 8300000, guid: f8ebb884023eded479284e0828e97a4a, type: 3}
 --- !u!135 &13510836
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -239,6 +238,10 @@ Prefab:
       propertyPath: deathSound
       value: 
       objectReference: {fileID: 8300000, guid: f8ebb884023eded479284e0828e97a4a, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: bullet
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 148264}

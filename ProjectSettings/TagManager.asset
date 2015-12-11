@@ -11,6 +11,9 @@ TagManager:
   - Mouth
   - Mouth_Target
   - dzone
+  - Queen
+  - bullet
+  - DeadReady
   layers:
   - Default
   - TransparentFX

@@ -91,6 +91,16 @@ namespace Assets.Scripts.Player
                 gameOver = true;
                 UpdateWinText("You Lost!!");
             }
+
+			if(PlayerHealth.player_isDead)
+			{
+					gameOver = true;
+					//Destroy (gameObject.Player_NEW);
+					UpdateWinText ("You have died!");
+
+			}
+
+
             else
             {
                 // decrease timer to 0

@@ -9,10 +9,8 @@ using System.Collections;
 public class enemyBehvaiorSuicide : MonoBehaviour {
 
     public float speed = 9.0f; // move speed
-    Vector3 playerTarget;
-    //GameObject mbj;
-    public string targetTag;
-    public string modelTag;
+    private Vector3 target;
+    public string targetTag = "Player";
    // public int damage;
     public float RotationSpeed;
     private Quaternion _lookRotation;
@@ -26,7 +24,7 @@ public class enemyBehvaiorSuicide : MonoBehaviour {
     // Use this for initialization
     void Start () 
 	{
-		playerTarget = GameObject.FindGameObjectWithTag(targetTag).transform.position;
+		target = GameObject.FindGameObjectWithTag(targetTag).transform.position;
         StartCoroutine(wait());	//wait 3 seconds to fall to ground
 
     }
@@ -45,12 +43,13 @@ public class enemyBehvaiorSuicide : MonoBehaviour {
 		{
 			Debug.Log("PLAY DEATH SOUND enemyBehavior.cs");
 			source.PlayOneShot (deathSound,1.0F);
+			//AudioSource.PlayClipAtPoint(deathSound, transform.position);
 			//stuff
 		}
 
 		findPlayer ();	//locate player's current position
 
-		if(playerTarget != null)
+		if(target != null)
         {
             Move();
         }
@@ -62,23 +61,27 @@ public class enemyBehvaiorSuicide : MonoBehaviour {
 
 	void findPlayer()
 	{
-		playerTarget = GameObject.FindGameObjectWithTag (targetTag).transform.position;
+		target = GameObject.FindGameObjectWithTag(targetTag).transform.position;
 	}
 
     void Move()	//move toward player
     {
-		_direction = (playerTarget - transform.position).normalized;
+		_direction = (target - transform.position).normalized;
         _lookRotation = Quaternion.LookRotation(_direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * RotationSpeed);
-		transform.position = Vector3.MoveTowards(transform.position, playerTarget, speed);
+		transform.position = Vector3.MoveTowards(transform.position, target, speed);
     }
-    void OnCollisionEnter(Collision touched)
+    void OnTriggerEnter(Collider touched)
     {
        
-		if (touched.gameObject.CompareTag ("Player")) 
+		if (touched.gameObject.tag == targetTag) 
         {
-			source.PlayOneShot (explodeSound, 1.0f);
-            Destroy(this.gameObject);
+			//spawn an explosion
+            
+			AudioSource.PlayClipAtPoint(explodeSound, transform.position);
+
+			//destroy 
+			Destroy(this.gameObject);
             Destroy(this.transform.parent.gameObject);
 
         }

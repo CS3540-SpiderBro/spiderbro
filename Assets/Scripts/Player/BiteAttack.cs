@@ -50,6 +50,7 @@ public class BiteAttack : MonoBehaviour
 		//init audio source
 		source = GetComponent<AudioSource>();
 
+		//why is this even here?
 		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
 		if (gameControllerObject != null) 
 		{

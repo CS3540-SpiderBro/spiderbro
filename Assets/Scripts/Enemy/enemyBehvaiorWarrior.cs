@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 /// <summary>
-/// move enemies towards playerTarget and delete them when collide with player
+/// Flies toward player and then stops and fires a shot once in range
 /// </summary>
 /// 
 
@@ -12,7 +12,7 @@ public class enemyBehvaiorWarrior : MonoBehaviour {
     Vector3 playerTarget;
     //GameObject mbj;
     public string targetTag;
-    public string modelTag;
+    public string damagerTag;
    // public int damage;
     public float RotationSpeed;
     private Quaternion _lookRotation;
@@ -66,10 +66,13 @@ public class enemyBehvaiorWarrior : MonoBehaviour {
     }
     void OnCollisionEnter(Collision touched)
     {
-       
-        if (touched.gameObject.tag == modelTag)
+       //if 
+        if (touched.gameObject.tag == damagerTag)
         {
             
+			AudioSource.PlayClipAtPoint(deathSound, transform.position);
+			Instantiate(deathSound, gameObject.transform.position, gameObject.transform.rotation);
+
             Destroy(this.gameObject);
             Destroy(this.transform.parent.gameObject);
 

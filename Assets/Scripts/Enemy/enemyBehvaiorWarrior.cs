@@ -8,7 +8,8 @@ using System.Collections;
 [RequireComponent(typeof(AudioSource))]
 public class enemyBehvaiorWarrior : MonoBehaviour {
 
-    public float speed = 9.0f; // move speed
+    public float speed = 0.2f; // move speed
+	public float mindist = 8.0f;
     Vector3 playerTarget;
     //GameObject mbj;
     public string targetTag;
@@ -26,16 +27,14 @@ public class enemyBehvaiorWarrior : MonoBehaviour {
     void Start () 
 	{
 		playerTarget = GameObject.FindGameObjectWithTag(targetTag).transform.position;
-        StartCoroutine(wait());
+		StartCoroutine(LoadAfterDelay());
 
     }
 
-    IEnumerator wait()
-    {
-
-        yield return new WaitForSeconds(3);
-          
-    }
+	IEnumerator LoadAfterDelay()
+	{
+		yield return new WaitForSeconds(05); // wait 1 seconds
+	}
     // Update is called once per frame
     void FixedUpdate () 
 	{
@@ -47,6 +46,8 @@ public class enemyBehvaiorWarrior : MonoBehaviour {
 			//stuff
 		}
 
+		findPlayer ();	//locate player's current position
+
 		if(playerTarget != null)
         {
             Move();
@@ -57,16 +58,28 @@ public class enemyBehvaiorWarrior : MonoBehaviour {
         
     }
 
+	void findPlayer()
+	{
+		playerTarget = GameObject.FindGameObjectWithTag(targetTag).transform.position;
+	}
+
     void Move()
     {
 		_direction = (playerTarget - transform.position).normalized;
         _lookRotation = Quaternion.LookRotation(_direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * RotationSpeed);
-		transform.position = Vector3.MoveTowards(transform.position, playerTarget, speed);
+
+
+		float distance = Vector3.Distance (transform.position, playerTarget);	//find distance between us and player
+		Debug.Log ("Distance is: " + distance);
+		if (distance > mindist) 
+		{
+			transform.position = Vector3.MoveTowards (transform.position, playerTarget, speed);
+		}	//if we're further away from player than mindist, get closer
     }
     void OnCollisionEnter(Collision touched)
     {
-       //if 
+       //if we get hit by projectile, time to explode
         if (touched.gameObject.tag == damagerTag)
         {
             

@@ -869,15 +869,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f45e83cc8f201af4eb24c9c6b3598694, type: 3}
       propertyPath: m_LocalScale.x
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f45e83cc8f201af4eb24c9c6b3598694, type: 3}
       propertyPath: m_LocalScale.y
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f45e83cc8f201af4eb24c9c6b3598694, type: 3}
       propertyPath: m_LocalScale.z
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f45e83cc8f201af4eb24c9c6b3598694, type: 3}
       propertyPath: m_TagString
@@ -901,7 +901,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba188a17fbdb3404d93794612fb2cb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: .100000001
+  mindist: 8
   targetTag: Player
   damagerTag: bullet
   RotationSpeed: 2
@@ -986,7 +987,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: .0500000007
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -1001,8 +1002,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: .0350000001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: .0370000005
+  m_Center: {x: 0, y: -.00499999989, z: 0}
 --- !u!1 &574367334
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,19 +2094,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22427454, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22427454, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22495310, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22495310, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}

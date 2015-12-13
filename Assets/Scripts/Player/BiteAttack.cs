@@ -23,7 +23,7 @@ public class BiteAttack : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.tag == "Enemy") 
+		if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "EnemySuicide") 
 		{
 			enemy_in_range = true;
 			myEnemy = other;

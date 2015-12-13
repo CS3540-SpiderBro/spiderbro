@@ -48,7 +48,8 @@ public class BulletBehaviour : MonoBehaviour {
 	void OnCollisionEnter(Collision col)
 	{
 		Instantiate(Bulletsplat, gameObject.transform.position, gameObject.transform.rotation);
-        if (col.gameObject.CompareTag ("Enemy")) {
+		if (col.gameObject.CompareTag ("Enemy") || col.gameObject.tag == "EnemySuicide") 
+		{
 			try{
 
 				KillEnemy(col);

@@ -38,16 +38,17 @@ public class PlayerHealth : MonoBehaviour
 		}
 
 
-		if (col.gameObject.name == "SuicideRoach" || col.gameObject.name == "redRoach") 
+		if (col.gameObject.tag == "EnemySuicide") 
 		{
 			Debug.Log ("Touched Suicide Roach");
 			health = health - 3;
 			Debug.Log ("-3 HP!");
+			Debug.Log ("Health: " + health);
 		}
 		
-		if (health >= 0) 
+		if (health < 1) 
 		{
-			gameObject.tag = "DeadReady";
+			player_isDead = true;
 		}
 
 		Debug.Log ("Collided with " + col.gameObject.name);

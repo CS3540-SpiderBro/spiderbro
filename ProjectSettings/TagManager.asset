@@ -14,6 +14,7 @@ TagManager:
   - Queen
   - bullet
   - DeadReady
+  - EnemySuicide
   layers:
   - Default
   - TransparentFX

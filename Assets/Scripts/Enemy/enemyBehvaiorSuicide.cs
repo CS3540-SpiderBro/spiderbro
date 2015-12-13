@@ -6,7 +6,8 @@ using System.Collections;
 /// 
 
 [RequireComponent(typeof(AudioSource))]
-public class enemyBehvaiorSuicide : MonoBehaviour {
+public class enemyBehvaiorSuicide : MonoBehaviour 
+{
 
     public float speed = 9.0f; // move speed
     private Vector3 target;
@@ -15,6 +16,8 @@ public class enemyBehvaiorSuicide : MonoBehaviour {
     public float RotationSpeed;
     private Quaternion _lookRotation;
     private Vector3 _direction;
+
+	public GameObject bloodsplat;
 
 	//for sounds
 	public AudioClip deathSound;
@@ -73,12 +76,14 @@ public class enemyBehvaiorSuicide : MonoBehaviour {
     }
     void OnTriggerEnter(Collider touched)
     {
-       
-		if (touched.gameObject.tag == targetTag) 
+
+
+		//spawn an explosion
+		if(touched.gameObject.tag == "Player")
         {
-			//spawn an explosion
-            
+
 			AudioSource.PlayClipAtPoint(explodeSound, transform.position);
+			Instantiate(bloodsplat, gameObject.transform.position, gameObject.transform.rotation);
 
 			//destroy 
 			Destroy(this.gameObject);

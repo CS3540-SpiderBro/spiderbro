@@ -22,6 +22,7 @@ namespace Assets.Scripts.Player
 
         GameObject[] gameObjects;
         GameObject[] spawnObjects;
+		GameObject[] suicideRoaches;
         mouthScript mouth;
         private int _killCount;
         private bool gameOver;
@@ -144,11 +145,19 @@ namespace Assets.Scripts.Player
             {
                 Destroy(gameObjects[i]);
             }
+
             spawnObjects = GameObject.FindGameObjectsWithTag("spawner");
             for (int i = 0; i < spawnObjects.Length; i++)
             {
                 Destroy(spawnObjects[i]);
             }
+
+			//suicide roaches need special treatment :/
+			suicideRoaches = GameObject.FindGameObjectsWithTag ("EnemySuicide");
+			for (int i = 0; i < suicideRoaches.Length; i++)
+			{
+				Destroy(suicideRoaches[i]);
+			}
 
         }
     }

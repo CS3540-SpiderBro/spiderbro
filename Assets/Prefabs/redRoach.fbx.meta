@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 34280b4e34b59ae41bddbc1dff652ab8
 timeCreated: 1449878271
+=======
+guid: 35cacf8704b71a647ae4c236754da06e
+timeCreated: 1449878039
+>>>>>>> origin/gh_queen
 licenseType: Free
 ModelImporter:
   serializedVersion: 18

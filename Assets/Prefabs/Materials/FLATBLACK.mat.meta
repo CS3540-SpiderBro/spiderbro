@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: f3f6f4d81eb0a3d4599d4a6ca36b1528
 timeCreated: 1449878270
+=======
+guid: 9bbdd3d684b42dc48b5d3e9bace2d986
+timeCreated: 1449878039
+>>>>>>> origin/gh_queen
 licenseType: Free
 NativeFormatImporter:
   userData: 

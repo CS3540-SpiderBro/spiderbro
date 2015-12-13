@@ -5,18 +5,25 @@ public class LogoScript : MonoBehaviour
 {
 	public string level = "Title";
 
-	/*
+
 	void Start () 
 	{
-		StartCoroutine (wait ());	//wait 4 seconds to fall to ground
-		Application.LoadLevel (level);
+		ModeSelect ();
 	}
-	
-	IEnumerator wait()
-	{
+
 		
-		yield return new WaitForSeconds (4.0f);
-	}*/
+		
+	public void  ModeSelect()
+	{
+			StartCoroutine(LoadAfterDelay(level));
+	}
+		
+	IEnumerator LoadAfterDelay(string levelName)
+	{
+			yield return new WaitForSeconds(05); // wait 1 seconds
+			Application.LoadLevel(levelName);
+			
+	}
 
 	
 	// Update is called once per frame

@@ -8,8 +8,6 @@ namespace Assets.Scripts.Player
 {
     public class LevelStatus : MonoBehaviour
     {
-        public float TOTAL_SECONDS = 10.0f;
-
         public int EnemyCount;
         public Text winText;
         public Text killCountText;
@@ -37,7 +35,6 @@ namespace Assets.Scripts.Player
             winText.text = "";
             _killCount = 0;
             gameOver = false;
-            secondsLeft = TOTAL_SECONDS;
             mouth = GameObject.FindObjectOfType(typeof(mouthScript)) as mouthScript;
             pausePanel.SetActive(false);
             Time.timeScale = 1;
@@ -46,6 +43,8 @@ namespace Assets.Scripts.Player
             Cursor.visible = false;
 
             fpsController = FindObjectOfType(typeof(FirstPersonController)) as FirstPersonController;
+
+            LoadWave(1);
         }
 
         // Update is called once per frame
@@ -79,8 +78,11 @@ namespace Assets.Scripts.Player
                     Application.LoadLevel("Title");
                 }
 
-                if (Input.GetKeyDown())
             }
+
+            if (Input.GetKeyDown(KeyCode.Alpha1)) LoadWave(1);
+            if (Input.GetKeyDown(KeyCode.Alpha2)) LoadWave(2);
+            if (Input.GetKeyDown(KeyCode.Alpha3)) LoadWave(3);
 
             if (!gameOver)
             {
@@ -142,6 +144,15 @@ namespace Assets.Scripts.Player
                 Destroy(spawnObjects[i]);
             }
 
+        }
+
+        public void LoadWave(int waveNum)
+        {
+            for(int i = 1; i <= waves.Length; ++i)
+            {
+                waves[i - 1].SetActive(i == waveNum);
+            }
+            secondsLeft = waves[waveNum - 1].GetComponent<WaveInfo>().DurationInSeconds;
         }
     }
 }

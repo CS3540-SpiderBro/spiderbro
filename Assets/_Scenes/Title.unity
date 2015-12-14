@@ -1036,7 +1036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e944bee7f200c4f97a7d8f28a1a183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: roomtest
+  level: Wave1
 --- !u!114 &2100101611
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 public class PlayerHealth : MonoBehaviour 
@@ -7,10 +8,8 @@ public class PlayerHealth : MonoBehaviour
 	public AudioClip hit;
 	public static bool player_isDead = false;
 	public int health = 7;
-	public int projectileDmg = 1;
-	public int suicideDmg = 1;
 	public AudioClip deathSound;
-
+    public Slider healthSlider;
 	//private AudioSource source;
 	mouthScript mouth;
 
@@ -19,9 +18,9 @@ public class PlayerHealth : MonoBehaviour
 	void Start () 
 	{
 		player_isDead = false;
-		health = 7;
-
-	}
+        healthSlider.maxValue = health;
+        healthSlider.value = health;
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () 
@@ -38,19 +37,14 @@ public class PlayerHealth : MonoBehaviour
 	{
 		if (col.gameObject.CompareTag("bullet"))
 		{
-			health = health - projectileDmg;
-			Debug.Log("-1 HP!");
-			AudioSource.PlayClipAtPoint(hit, transform.position);
+            DecreaseHP(1);
 		}
 
 
-		if (col.gameObject.tag == "EnemySuicide") 
-		{
-			Debug.Log ("Touched Suicide Roach");
-			health = health - suicideDmg;
-			AudioSource.PlayClipAtPoint(hit, transform.position);
-			Debug.Log ("-" + suicideDmg+ " HP!");
-			Debug.Log ("Health: " + health);
+		if (col.gameObject.tag == "EnemySuicide")
+        {
+            Debug.Log("Touched Suicide Roach");
+            DecreaseHP(3);
 		}
 		
 		if (health < 1) 
@@ -58,7 +52,18 @@ public class PlayerHealth : MonoBehaviour
 			player_isDead = true;
 		}
 
-		Debug.Log ("Collided with " + col.gameObject.name);
+        Debug.Log("Collided with " + col.gameObject.name);
+        Debug.Log("Tagged with " + col.gameObject.tag);
 
-	}
+    }
+
+    void DecreaseHP(int amount)
+    {
+        health = Mathf.Max(0, health - amount);
+        healthSlider.value = health;
+        Debug.Log(string.Format("-{0} HP!", amount));
+        Debug.Log("Health: " + health);
+        AudioSource.PlayClipAtPoint(hit, transform.position);
+
+    }
 }

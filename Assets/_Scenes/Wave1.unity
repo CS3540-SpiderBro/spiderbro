@@ -3279,7 +3279,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22412486, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 22412486, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -3329,6 +3329,14 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 22430372, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22430372, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 22495310, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3337,12 +3345,16 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11433734, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
+      propertyPath: m_Text
+      value: s p i d e r b r o   h e a l t h
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &1337799656 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11415840, guid: 9864a7c8c19a582449c500c30f3ac14b,
+  m_PrefabParentObject: {fileID: 11482876, guid: 9864a7c8c19a582449c500c30f3ac14b,
     type: 2}
   m_PrefabInternal: {fileID: 1337799655}
   m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
@@ -3374,6 +3386,12 @@ MonoBehaviour:
 GameObject:
   m_PrefabParentObject: {fileID: 123680, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
   m_PrefabInternal: {fileID: 1337799655}
+--- !u!114 &1337799662 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11415840, guid: 9864a7c8c19a582449c500c30f3ac14b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1337799655}
+  m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1363225448
 GameObject:
   m_ObjectHideFlags: 0
@@ -4461,6 +4479,10 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 11495388, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1337799662}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
   m_IsPrefabParent: 0

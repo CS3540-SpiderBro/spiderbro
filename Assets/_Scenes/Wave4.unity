@@ -3416,19 +3416,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22427454, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22427454, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22495310, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22495310, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22430372, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22430372, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
@@ -3467,6 +3475,12 @@ MonoBehaviour:
 GameObject:
   m_PrefabParentObject: {fileID: 123680, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
   m_PrefabInternal: {fileID: 1337799655}
+--- !u!114 &1337799662 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11482876, guid: 9864a7c8c19a582449c500c30f3ac14b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1337799655}
+  m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1363225448
 GameObject:
   m_ObjectHideFlags: 0
@@ -4577,28 +4591,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 65605321}
   m_RootOrder: 1
---- !u!1 &1965544622 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 195590, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
-  m_PrefabInternal: {fileID: 1971741471}
 --- !u!4 &1965544623 stripped
 Transform:
   m_PrefabParentObject: {fileID: 486282, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
   m_PrefabInternal: {fileID: 1971741471}
---- !u!114 &1965544630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1965544622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e054cfeb581709479fa1992b60309d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hit: {fileID: 0}
-  health: 7
-  deathSound: {fileID: 8300000, guid: 0de223b92cce77745b2dddff9bca1ce5, type: 3}
 --- !u!1001 &1971741471
 Prefab:
   m_ObjectHideFlags: 0
@@ -4641,11 +4637,15 @@ Prefab:
     - target: {fileID: 11475992, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
       propertyPath: spitSlider
       value: 
-      objectReference: {fileID: 1337799656}
+      objectReference: {fileID: 1337799662}
     - target: {fileID: 195590, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 11495388, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1337799656}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
   m_IsPrefabParent: 0

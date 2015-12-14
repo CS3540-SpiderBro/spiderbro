@@ -1118,7 +1118,6 @@ GameObject:
   - 54: {fileID: 5465380}
   - 82: {fileID: 8270654}
   - 114: {fileID: 11475992}
-  - 82: {fileID: 8263842}
   - 114: {fileID: 11495388}
   m_Layer: 0
   m_Name: Player_New
@@ -2394,76 +2393,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!82 &8263842
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 195590}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!82 &8270654
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2542,7 +2471,7 @@ Animation:
   m_GameObject: {fileID: 146386}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400004, guid: bc600cce01eb57a409f4e69025868a2c, type: 3}
+  m_Animation: {fileID: 7400010, guid: bc600cce01eb57a409f4e69025868a2c, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: bc600cce01eb57a409f4e69025868a2c, type: 3}
   - {fileID: 7400002, guid: bc600cce01eb57a409f4e69025868a2c, type: 3}
@@ -2698,6 +2627,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hit: {fileID: 8300000, guid: c9ea8cf7df6843a47ab7290a31e99288, type: 3}
   health: 7
+  projectileDmg: 1
+  suicideDmg: 3
   deathSound: {fileID: 8300000, guid: 0de223b92cce77745b2dddff9bca1ce5, type: 3}
   healthSlider: {fileID: 0}
 --- !u!136 &13686800
@@ -2811,6 +2742,10 @@ Prefab:
       propertyPath: m_IsWalking
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400010, guid: bc600cce01eb57a409f4e69025868a2c, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 195590}

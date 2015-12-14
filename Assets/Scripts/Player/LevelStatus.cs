@@ -20,8 +20,9 @@ namespace Assets.Scripts.Player
         static KeyCode RestartKeyCode = KeyCode.R;
         static KeyCode QuitKeyCode = KeyCode.Q;
 
-		GameObject[] suicideRoaches;
+
         mouthScript mouth;
+		PlayerHealth playerHP;
         private int _killCount;
         private bool gameOver;
         private float secondsLeft;
@@ -34,7 +35,7 @@ namespace Assets.Scripts.Player
         // Use this for initialization
         void Start()
         {
-
+			NextScene = "";
             winText.text = "";
             _killCount = 0;
             gameOver = false;
@@ -52,7 +53,7 @@ namespace Assets.Scripts.Player
         }
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
             if (Input.GetKeyDown(pauseKeyCode) && !gameOver)
             {
@@ -81,7 +82,9 @@ namespace Assets.Scripts.Player
                 if (Input.GetKeyDown(RestartKeyCode))
                 {
                     Time.timeScale = 1;
+					Debug.Log ("Pressed restart key");
                     Application.LoadLevel(Application.loadedLevelName);
+
                 }
 
                 if (Input.GetKeyDown(QuitKeyCode))
@@ -100,7 +103,7 @@ namespace Assets.Scripts.Player
                     UpdateWinText("You Lost!!\nPress [R] to Restart");
                 }
 
-                if (PlayerHealth.player_isDead)
+				if (PlayerHealth.player_isDead)
                 {
                     gameOver = true;
                     //Destroy (gameObject.Player_NEW);
@@ -132,6 +135,8 @@ namespace Assets.Scripts.Player
                 }
             }
 
+			checkLevelDone ();	//check if we killed all enemies and queens and structures in scene
+
         }
 
         private void UpdateWinText(string message)
@@ -145,6 +150,17 @@ namespace Assets.Scripts.Player
         {
             ++_killCount;
         }
+
+		private void checkLevelDone()
+		{
+			int enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+			int suicideCount = GameObject.FindGameObjectsWithTag("EnemySuicide").Length;
+			int nestCount = GameObject.FindGameObjectsWithTag("Queen").Length;
+			
+			if(enemyCount+suicideCount+nestCount == 0)
+				secondsLeft = 0;
+			
+		}
 
 
         void DeleteAll()
@@ -161,7 +177,7 @@ namespace Assets.Scripts.Player
             }
 
 			//suicide roaches need special treatment :/
-			suicideRoaches = GameObject.FindGameObjectsWithTag ("EnemySuicide");
+			GameObject[] suicideRoaches = GameObject.FindGameObjectsWithTag ("EnemySuicide");
 			for (int i = 0; i < suicideRoaches.Length; i++)
 			{
 				Destroy(suicideRoaches[i]);

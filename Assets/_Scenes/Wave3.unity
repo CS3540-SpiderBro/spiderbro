@@ -345,7 +345,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11416244, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
       propertyPath: LevelSeconds
-      value: 130
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
@@ -852,6 +852,10 @@ Prefab:
       propertyPath: m_Name
       value: nestSpawner (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 11423348, guid: 557656becabc9754a8d83defedec01bc, type: 2}
+      propertyPath: aEnemy
+      value: 
+      objectReference: {fileID: 109692, guid: 2a1690feb4cd63543abd592ef4f3a313, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 557656becabc9754a8d83defedec01bc, type: 2}
   m_IsPrefabParent: 0
@@ -2170,7 +2174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 327646f161c22da429a64bee3cb7df16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadSound: {fileID: 0}
+  deadSound: {fileID: 8300000, guid: a796bc348bd7b554aaf748d64b4383f0, type: 3}
   hitPoints: 20
   mouthHealthSlider: {fileID: 650964736}
 --- !u!4 &635450154 stripped
@@ -2220,7 +2224,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499124, guid: 49c556ec7a56aa047a5cc9137c1b55ec, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 199592, guid: 49c556ec7a56aa047a5cc9137c1b55ec, type: 2}
       propertyPath: m_Name
@@ -3621,6 +3625,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11423348, guid: 557656becabc9754a8d83defedec01bc, type: 2}
+      propertyPath: aEnemy
+      value: 
+      objectReference: {fileID: 109692, guid: 2a1690feb4cd63543abd592ef4f3a313, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 557656becabc9754a8d83defedec01bc, type: 2}
   m_IsPrefabParent: 0

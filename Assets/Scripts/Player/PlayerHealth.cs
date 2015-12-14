@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
 	public AudioClip hit;
 	public static bool player_isDead = false;
 	public int health = 7;
+	public int projectileDmg = 1;
+	public int suicideDmg = 3;
 	public AudioClip deathSound;
     public Slider healthSlider;
 	//private AudioSource source;
@@ -17,9 +19,13 @@ public class PlayerHealth : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		health = 7;
+		suicideDmg = 3;
+		projectileDmg = 1;
 		player_isDead = false;
         healthSlider.maxValue = health;
         healthSlider.value = health;
+		this.gameObject.SetActive (true);
     }
 	
 	// Update is called once per frame
@@ -29,22 +35,23 @@ public class PlayerHealth : MonoBehaviour
 		{
 			AudioSource.PlayClipAtPoint(deathSound, transform.position);
 			this.gameObject.SetActive(false);
+			//Destroy(this.gameObject);
 		}
 	
 	}
-	
+
 	void OnCollisionEnter(Collision col)
 	{
 		if (col.gameObject.CompareTag("bullet"))
 		{
-            DecreaseHP(1);
+			DecreaseHP(projectileDmg);
 		}
 
 
 		if (col.gameObject.tag == "EnemySuicide")
         {
             Debug.Log("Touched Suicide Roach");
-            DecreaseHP(3);
+			DecreaseHP(suicideDmg);
 		}
 		
 		if (health < 1) 
@@ -59,7 +66,11 @@ public class PlayerHealth : MonoBehaviour
 
     void DecreaseHP(int amount)
     {
-        health = Mathf.Max(0, health - amount);
+		if (health < 0)	//if we're already past 0
+			return;
+
+        //health = Mathf.Max(0, health - amount);
+		health = health - amount;
         healthSlider.value = health;
         Debug.Log(string.Format("-{0} HP!", amount));
         Debug.Log("Health: " + health);

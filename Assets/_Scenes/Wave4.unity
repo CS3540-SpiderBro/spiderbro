@@ -395,7 +395,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11416244, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
       propertyPath: LevelSeconds
-      value: 30
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
@@ -2232,7 +2232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 327646f161c22da429a64bee3cb7df16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadSound: {fileID: 0}
+  deadSound: {fileID: 8300000, guid: a796bc348bd7b554aaf748d64b4383f0, type: 3}
   hitPoints: 20
   mouthHealthSlider: {fileID: 650964736}
 --- !u!4 &635450154 stripped
@@ -3416,27 +3416,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22427454, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22427454, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22495310, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22495310, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22430372, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22430372, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}

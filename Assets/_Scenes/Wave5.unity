@@ -2282,7 +2282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 327646f161c22da429a64bee3cb7df16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadSound: {fileID: 0}
+  deadSound: {fileID: 8300000, guid: a796bc348bd7b554aaf748d64b4383f0, type: 3}
   hitPoints: 20
   mouthHealthSlider: {fileID: 650964736}
 --- !u!4 &635450154 stripped

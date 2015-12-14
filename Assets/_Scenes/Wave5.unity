@@ -132,6 +132,18 @@ Prefab:
       propertyPath: aEnemy
       value: 
       objectReference: {fileID: 109692, guid: 2a1690feb4cd63543abd592ef4f3a313, type: 2}
+    - target: {fileID: 11418502, guid: 557656becabc9754a8d83defedec01bc, type: 2}
+      propertyPath: hp
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486928, guid: 557656becabc9754a8d83defedec01bc, type: 2}
+      propertyPath: DamagePoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418502, guid: 557656becabc9754a8d83defedec01bc, type: 2}
+      propertyPath: xp
+      value: 75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 557656becabc9754a8d83defedec01bc, type: 2}
   m_IsPrefabParent: 0
@@ -686,6 +698,18 @@ Prefab:
       propertyPath: aEnemy
       value: 
       objectReference: {fileID: 109692, guid: 2a1690feb4cd63543abd592ef4f3a313, type: 2}
+    - target: {fileID: 11418502, guid: 557656becabc9754a8d83defedec01bc, type: 2}
+      propertyPath: hp
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486928, guid: 557656becabc9754a8d83defedec01bc, type: 2}
+      propertyPath: DamagePoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418502, guid: 557656becabc9754a8d83defedec01bc, type: 2}
+      propertyPath: xp
+      value: 75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 557656becabc9754a8d83defedec01bc, type: 2}
   m_IsPrefabParent: 0
@@ -959,6 +983,10 @@ Prefab:
     - target: {fileID: 199592, guid: 49c556ec7a56aa047a5cc9137c1b55ec, type: 2}
       propertyPath: m_Name
       value: FlyingQueen v2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473558, guid: 49c556ec7a56aa047a5cc9137c1b55ec, type: 2}
+      propertyPath: spawntime
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 49c556ec7a56aa047a5cc9137c1b55ec, type: 2}
@@ -2338,6 +2366,10 @@ Prefab:
       propertyPath: m_Name
       value: FlyingQueen v2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 11473558, guid: 49c556ec7a56aa047a5cc9137c1b55ec, type: 2}
+      propertyPath: spawntime
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 49c556ec7a56aa047a5cc9137c1b55ec, type: 2}
   m_IsPrefabParent: 0
@@ -3427,6 +3459,18 @@ Prefab:
       propertyPath: aEnemy
       value: 
       objectReference: {fileID: 109692, guid: 2a1690feb4cd63543abd592ef4f3a313, type: 2}
+    - target: {fileID: 11418502, guid: 557656becabc9754a8d83defedec01bc, type: 2}
+      propertyPath: hp
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486928, guid: 557656becabc9754a8d83defedec01bc, type: 2}
+      propertyPath: DamagePoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418502, guid: 557656becabc9754a8d83defedec01bc, type: 2}
+      propertyPath: xp
+      value: 75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 557656becabc9754a8d83defedec01bc, type: 2}
   m_IsPrefabParent: 0
@@ -4605,6 +4649,10 @@ Prefab:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 1337799656}
+    - target: {fileID: 185714, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
+      propertyPath: m_TagString
+      value: playerBite
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
   m_IsPrefabParent: 0
@@ -4691,6 +4739,18 @@ Prefab:
     - target: {fileID: 472392, guid: 557656becabc9754a8d83defedec01bc, type: 2}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418502, guid: 557656becabc9754a8d83defedec01bc, type: 2}
+      propertyPath: hp
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486928, guid: 557656becabc9754a8d83defedec01bc, type: 2}
+      propertyPath: DamagePoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418502, guid: 557656becabc9754a8d83defedec01bc, type: 2}
+      propertyPath: xp
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 557656becabc9754a8d83defedec01bc, type: 2}

@@ -15,6 +15,7 @@ TagManager:
   - bullet
   - DeadReady
   - EnemySuicide
+  - playerBite
   layers:
   - Default
   - TransparentFX

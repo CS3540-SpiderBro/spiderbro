@@ -24,6 +24,13 @@ public class QueenBehavior : MonoBehaviour
             Debug.Log("Hit: " +  stats.xp);
         }
 
+		/* FIX ME Later
+		if (col.gameObject.CompareTag ("playerBite")) 
+		{
+			stats.xp -= DamagePoint * 3;
+			Debug.Log ("Hit: " + stats.xp);
+		}*/
+
         if (stats.xp <= DamagePoint) gameObject.tag = "DeadReady";
     }
 }

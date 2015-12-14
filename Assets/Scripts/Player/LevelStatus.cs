@@ -10,6 +10,7 @@ namespace Assets.Scripts.Player
     {
         public int LevelSeconds = 30;
         public int EnemyCount;
+        public string NextScene;
         public Text winText;
         public Text killCountText;
         public Text timerText;
@@ -24,6 +25,7 @@ namespace Assets.Scripts.Player
         private int _killCount;
         private bool gameOver;
         private float secondsLeft;
+        private bool endless;
         private FirstPersonController fpsController;
 
         public bool IsPaused { get; private set; }
@@ -46,6 +48,7 @@ namespace Assets.Scripts.Player
             fpsController = FindObjectOfType(typeof(FirstPersonController)) as FirstPersonController;
 
             secondsLeft = LevelSeconds;
+            endless = (LevelSeconds <= 0);
         }
 
         // Update is called once per frame
@@ -98,18 +101,26 @@ namespace Assets.Scripts.Player
                 }
                 else
                 {
-                    // decrease timer to 0
-                    secondsLeft = Mathf.Max(secondsLeft - Time.deltaTime, 0);
-                    // set timer text
-                    timerText.text = string.Format("{0}:{1:00.00}", (int)(secondsLeft / 60), secondsLeft % 60);
+                    if(!endless)
+                    {
+                        // decrease timer to 0
+                        secondsLeft = Mathf.Max(secondsLeft - Time.deltaTime, 0);
+                        // set timer text
+                        timerText.text = string.Format("{0}:{1:00.00}", (int)(secondsLeft / 60), secondsLeft % 60);
+                        // see if game is over now
+                        if (secondsLeft == 0)
+                        {
+                            gameOver = true;
+                            UpdateWinText("You have Won!!");
+                        }
+                    }
+                    else
+                    {
+                        timerText.text = "∞";
+                    }
+                    
                     // update kill counter
                     killCountText.text = _killCount.ToString();
-                    // see if game is over now
-                    if (secondsLeft == 0)
-                    {
-                        gameOver = true;
-                        UpdateWinText("You have Won!!");
-                    }
                 }
             }
 

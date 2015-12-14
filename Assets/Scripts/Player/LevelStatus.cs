@@ -10,7 +10,6 @@ namespace Assets.Scripts.Player
     {
         public int LevelSeconds = 30;
         public int EnemyCount;
-        public string NextScene;
         public Text winText;
         public Text killCountText;
         public Text timerText;
@@ -35,7 +34,6 @@ namespace Assets.Scripts.Player
         // Use this for initialization
         void Start()
         {
-			NextScene = "";
             winText.text = "";
             _killCount = 0;
             gameOver = false;
@@ -53,7 +51,7 @@ namespace Assets.Scripts.Player
         }
 
         // Update is called once per frame
-        void FixedUpdate()
+        void Update()
         {
             if (Input.GetKeyDown(pauseKeyCode) && !gameOver)
             {

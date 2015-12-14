@@ -8,16 +8,16 @@ namespace Assets.Scripts.Player
 {
     public class LevelStatus : MonoBehaviour
     {
+        public int LevelSeconds = 30;
         public int EnemyCount;
         public Text winText;
         public Text killCountText;
         public Text timerText;
         public Text crossHair;
         public GameObject pausePanel;
-        public KeyCode pauseKeyCode;
-        public KeyCode RestartKeyCode;
-        public KeyCode QuitKeyCode;
-        public GameObject[] waves;
+        static KeyCode pauseKeyCode = KeyCode.P;
+        static KeyCode RestartKeyCode = KeyCode.R;
+        static KeyCode QuitKeyCode = KeyCode.Q;
 
 		GameObject[] suicideRoaches;
         mouthScript mouth;
@@ -45,7 +45,7 @@ namespace Assets.Scripts.Player
 
             fpsController = FindObjectOfType(typeof(FirstPersonController)) as FirstPersonController;
 
-            LoadWave(1);
+            secondsLeft = LevelSeconds;
         }
 
         // Update is called once per frame
@@ -80,10 +80,6 @@ namespace Assets.Scripts.Player
                 }
 
             }
-
-            if (Input.GetKeyDown(KeyCode.Alpha1)) LoadWave(1);
-            if (Input.GetKeyDown(KeyCode.Alpha2)) LoadWave(2);
-            if (Input.GetKeyDown(KeyCode.Alpha3)) LoadWave(3);
 
             if (!gameOver)
             {
@@ -152,15 +148,6 @@ namespace Assets.Scripts.Player
 				Destroy(suicideRoaches[i]);
 			}
 
-        }
-
-        public void LoadWave(int waveNum)
-        {
-            for(int i = 1; i <= waves.Length; ++i)
-            {
-                waves[i - 1].SetActive(i == waveNum);
-            }
-            secondsLeft = waves[waveNum - 1].GetComponent<WaveInfo>().DurationInSeconds;
         }
     }
 }

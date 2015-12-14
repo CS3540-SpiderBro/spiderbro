@@ -16,4 +16,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Wave3.unity
   - enabled: 1
+    path: Assets/_Scenes/Wave4.unity
+  - enabled: 1
     path: Assets/_Scenes/Wave5.unity

@@ -2699,6 +2699,7 @@ MonoBehaviour:
   hit: {fileID: 8300000, guid: c9ea8cf7df6843a47ab7290a31e99288, type: 3}
   health: 7
   deathSound: {fileID: 8300000, guid: 0de223b92cce77745b2dddff9bca1ce5, type: 3}
+  healthSlider: {fileID: 0}
 --- !u!136 &13686800
 CapsuleCollider:
   m_ObjectHideFlags: 1

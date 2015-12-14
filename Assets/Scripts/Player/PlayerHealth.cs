@@ -52,9 +52,10 @@ public class PlayerHealth : MonoBehaviour
 			player_isDead = true;
 		}
 
-		Debug.Log ("Collided with " + col.gameObject.name);
+        Debug.Log("Collided with " + col.gameObject.name);
+        Debug.Log("Tagged with " + col.gameObject.tag);
 
-	}
+    }
 
     void DecreaseHP(int amount)
     {

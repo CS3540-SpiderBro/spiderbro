@@ -3318,6 +3318,14 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 22430372, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22430372, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
   m_IsPrefabParent: 0
@@ -4430,10 +4438,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11475992, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
-      propertyPath: spitSlider
-      value: 
-      objectReference: {fileID: 178410680}
     - target: {fileID: 195590, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
       propertyPath: m_Name
       value: Player
@@ -4442,6 +4446,10 @@ Prefab:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 1337799656}
+    - target: {fileID: 11475992, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
+      propertyPath: spitSlider
+      value: 
+      objectReference: {fileID: 178410680}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
   m_IsPrefabParent: 0

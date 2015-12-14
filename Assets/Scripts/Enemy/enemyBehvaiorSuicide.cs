@@ -87,7 +87,7 @@ public class enemyBehvaiorSuicide : MonoBehaviour
 
 			//destroy 
 			Destroy(this.gameObject);
-            Destroy(this.transform.parent.gameObject);
+            //Destroy(this.transform.parent.gameObject);
 
         }
     }

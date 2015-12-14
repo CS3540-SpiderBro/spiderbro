@@ -6,6 +6,9 @@ using UnityEngine.UI;
 /// mother base controls and actions when base is destroyed
 /// </summary>
 public class mouthScript : MonoBehaviour {
+
+	int flag_1 = 0;
+	public AudioClip deadSound;
     public int hitPoints;
     bool gamedone = false;
     bool mouthDead = false;
@@ -19,6 +22,7 @@ public class mouthScript : MonoBehaviour {
         //GameObject canvas = GameObject.Find ("Canvas");
         gamedone = false;
         mouthDead = false;
+		flag_1 = 0;
         mouthHealthSlider.maxValue = hitPoints;
         mouthHealthSlider.value = hitPoints;
     }
@@ -51,7 +55,18 @@ public class mouthScript : MonoBehaviour {
             //gamedone = true;
             mouthDead = true;
 
+			if(flag_1 < 3)
+				flag_1++;	//increase flag
+
+			guyDies();	//for sound (and later animation)
+
         }
+	}
+
+	void guyDies()
+	{
+		if(flag_1 < 2)	//only play once
+			AudioSource.PlayClipAtPoint (deadSound, transform.position);
 	}
 
     public bool IsDead()

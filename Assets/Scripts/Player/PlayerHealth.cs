@@ -4,10 +4,12 @@ using System.Collections;
 [RequireComponent(typeof(AudioSource))]
 public class PlayerHealth : MonoBehaviour 
 {
+	public AudioClip hit;
 	public static bool player_isDead = false;
 	public int health = 7;
 	public AudioClip deathSound;
 	//private AudioSource source;
+	mouthScript mouth;
 
 
 	// Use this for initialization
@@ -21,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
-		if (player_isDead) 
+		if (player_isDead) 	//this doesn't really work
 		{
 			AudioSource.PlayClipAtPoint(deathSound, transform.position);
 			this.gameObject.SetActive(false);
@@ -35,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
 		{
 			health--;
 			Debug.Log("-1 HP!");
+			AudioSource.PlayClipAtPoint(hit, transform.position);
 		}
 
 
@@ -42,6 +45,7 @@ public class PlayerHealth : MonoBehaviour
 		{
 			Debug.Log ("Touched Suicide Roach");
 			health = health - 3;
+			AudioSource.PlayClipAtPoint(hit, transform.position);
 			Debug.Log ("-3 HP!");
 			Debug.Log ("Health: " + health);
 		}

@@ -304,6 +304,14 @@ Prefab:
       propertyPath: pausePanel
       value: 
       objectReference: {fileID: 1337799661}
+    - target: {fileID: 11416244, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
+      propertyPath: loseGameSnd
+      value: 
+      objectReference: {fileID: 8300000, guid: 68eba107a54b7354c978ee69736279cd, type: 3}
+    - target: {fileID: 11416244, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
+      propertyPath: TOTAL_SECONDS
+      value: 180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
   m_IsPrefabParent: 0
@@ -969,6 +977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 327646f161c22da429a64bee3cb7df16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deadSound: {fileID: 8300000, guid: a796bc348bd7b554aaf748d64b4383f0, type: 3}
   hitPoints: 20
   mouthHealthSlider: {fileID: 650964736}
 --- !u!114 &650964736 stripped
@@ -1918,19 +1927,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22427454, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22427454, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22495310, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22495310, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9864a7c8c19a582449c500c30f3ac14b, type: 2}
@@ -2908,8 +2917,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e054cfeb581709479fa1992b60309d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hit: {fileID: 8300000, guid: c9ea8cf7df6843a47ab7290a31e99288, type: 3}
   health: 7
-  deathSound: {fileID: 8300000, guid: 0de223b92cce77745b2dddff9bca1ce5, type: 3}
+  deathSound: {fileID: 8300000, guid: 92f1e22b578bc184c843df3a60aa8d14, type: 3}
 --- !u!1001 &1971741471
 Prefab:
   m_ObjectHideFlags: 0

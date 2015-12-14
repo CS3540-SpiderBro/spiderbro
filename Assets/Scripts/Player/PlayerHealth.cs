@@ -5,11 +5,10 @@ using System.Collections;
 public class PlayerHealth : MonoBehaviour 
 {
 	public AudioClip hit;
-	public static bool player_isDead = false;
+	public bool player_isDead = false;
 	public int health = 7;
 	public AudioClip deathSound;
 	//private AudioSource source;
-	mouthScript mouth;
 
 
 	// Use this for initialization

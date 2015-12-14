@@ -24,6 +24,7 @@ namespace Assets.Scripts.Player
         GameObject[] spawnObjects;
 		GameObject[] suicideRoaches;
         mouthScript mouth;
+		GameObject player;
         private int _killCount;
         private bool gameOver;
         private float secondsLeft;
@@ -36,13 +37,14 @@ namespace Assets.Scripts.Player
         // Use this for initialization
         void Start () 
         {
-
             winText.text = "";
             _killCount = 0;
             gameOver = false;
             secondsLeft = TOTAL_SECONDS;
             DisplayKillCount ();
             mouth = GameObject.FindObjectOfType(typeof(mouthScript)) as mouthScript;
+			player = GameObject.FindWithTag("Player");
+			//player = GameObject.FindObjectOfType (typeof(PlayerHealth)) as PlayerHealth;
             pausePanel.SetActive(false);
             Time.timeScale = 1;
 
@@ -94,7 +96,11 @@ namespace Assets.Scripts.Player
                 UpdateWinText("You Lost!!");
             }
 
-			if(PlayerHealth.player_isDead)
+
+
+			Debug.Log ("Current hp: " + player.GetComponent<PlayerHealth>().health);
+			
+			if(player.GetComponent<PlayerHealth>().player_isDead)
 			{
 					gameOver = true;
 					//Destroy (gameObject.Player_NEW);

@@ -6,9 +6,10 @@ using System.Collections;
 /// 
 
 [RequireComponent(typeof(AudioSource))]
-public class enemyBehvaiorWarrior : MonoBehaviour {
+public class enemyBehvaiorWarrior : MonoBehaviour 
+{
 
-    public float speed = 0.2f; // move speed
+    public float speed = 0.3f; // move speed
 	public float mindist = 8.0f;
     Vector3 playerTarget;
     public string targetTag;
@@ -56,6 +57,8 @@ public class enemyBehvaiorWarrior : MonoBehaviour {
 
 		findPlayer ();	//locate player's current position
 
+		spitAmmo = Mathf.Min(SPIT_CAPACITY, spitAmmo + SPIT_REGEN_RATE * Time.deltaTime);	//regen ammo
+
 		if(playerTarget != null)
         {
             Move();
@@ -89,14 +92,12 @@ public class enemyBehvaiorWarrior : MonoBehaviour {
 
 	void attackPlayer()
 	{
-		spitAmmo = Mathf.Min(SPIT_CAPACITY, spitAmmo + SPIT_REGEN_RATE * Time.deltaTime);
-
-		if (spitAmmo >= 1f) 
+		if (spitAmmo >= 1.0f) 
 		{
 			source.PlayOneShot (fireProjectile, 1.0F);
-			
+
 			//Rigidbody projectile = (Rigidbody)Instantiate (bullet, playerTarget.transform.position + playerTarget.transform.forward, playerTarget.transform.rotation);
-			Rigidbody projectile = (Rigidbody)Instantiate (bullet, transform.position, Quaternion.identity);
+			Rigidbody projectile = (Rigidbody)Instantiate (bullet, this.transform.position + this.transform.forward, this.transform.rotation);
 			projectile.AddForce (Vector3.forward * bulletforce, ForceMode.Impulse);
 			spitAmmo -= 1f;
 		}

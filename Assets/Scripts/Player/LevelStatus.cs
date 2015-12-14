@@ -8,8 +8,6 @@ namespace Assets.Scripts.Player
 {
     public class LevelStatus : MonoBehaviour
     {
-        public float TOTAL_SECONDS = 10.0f;
-
         public int EnemyCount;
         public Text winText;
         public Text killCountText;
@@ -19,9 +17,8 @@ namespace Assets.Scripts.Player
         public KeyCode pauseKeyCode;
         public KeyCode RestartKeyCode;
         public KeyCode QuitKeyCode;
+        public GameObject[] waves;
 
-        GameObject[] gameObjects;
-        GameObject[] spawnObjects;
 		GameObject[] suicideRoaches;
         mouthScript mouth;
         private int _killCount;
@@ -33,14 +30,12 @@ namespace Assets.Scripts.Player
 
 
         // Use this for initialization
-        void Start () 
+        void Start()
         {
 
             winText.text = "";
             _killCount = 0;
             gameOver = false;
-            secondsLeft = TOTAL_SECONDS;
-            DisplayKillCount ();
             mouth = GameObject.FindObjectOfType(typeof(mouthScript)) as mouthScript;
             pausePanel.SetActive(false);
             Time.timeScale = 1;
@@ -49,12 +44,14 @@ namespace Assets.Scripts.Player
             Cursor.visible = false;
 
             fpsController = FindObjectOfType(typeof(FirstPersonController)) as FirstPersonController;
+
+            LoadWave(1);
         }
-	
+
         // Update is called once per frame
-        void Update ()
+        void Update()
         {
-        if (Input.GetKeyDown(pauseKeyCode) && !gameOver)
+            if (Input.GetKeyDown(pauseKeyCode) && !gameOver)
             {
                 IsPaused = !IsPaused;
                 pausePanel.SetActive(IsPaused);
@@ -68,7 +65,7 @@ namespace Assets.Scripts.Player
                 Screen.fullScreen = true;
             }
 
-        if(IsPaused || gameOver)
+            if (IsPaused || gameOver)
             {
                 if (Input.GetKeyDown(RestartKeyCode))
                 {
@@ -76,46 +73,50 @@ namespace Assets.Scripts.Player
                     Application.LoadLevel(Application.loadedLevelName);
                 }
 
-                if(Input.GetKeyDown(QuitKeyCode))
+                if (Input.GetKeyDown(QuitKeyCode))
                 {
                     // Application.Quit();
                     Application.LoadLevel("Title");
                 }
+
             }
 
-        if (!gameOver)
-        {
-            DisplayKillCount();
+            if (Input.GetKeyDown(KeyCode.Alpha1)) LoadWave(1);
+            if (Input.GetKeyDown(KeyCode.Alpha2)) LoadWave(2);
+            if (Input.GetKeyDown(KeyCode.Alpha3)) LoadWave(3);
 
-            if (mouth.IsDead())
+            if (!gameOver)
             {
-                gameOver = true;
-                UpdateWinText("You Lost!!");
-            }
-
-			if(PlayerHealth.player_isDead)
-			{
-					gameOver = true;
-					//Destroy (gameObject.Player_NEW);
-					UpdateWinText ("You have died!");
-
-			}
-
-
-            else
-            {
-                // decrease timer to 0
-                secondsLeft = Mathf.Max(secondsLeft - Time.deltaTime, 0);
-                // set timer text
-                timerText.text = string.Format("{0}:{1:00.00}", (int)(secondsLeft / 60), secondsLeft % 60);
-                // see if game is over now
-                if (secondsLeft == 0)
+                if (mouth.IsDead())
                 {
                     gameOver = true;
-                    UpdateWinText("You have Won!!");
+                    UpdateWinText("You Lost!!");
+                }
+
+                if (PlayerHealth.player_isDead)
+                {
+                    gameOver = true;
+                    //Destroy (gameObject.Player_NEW);
+                    UpdateWinText("You have died!");
+
+                }
+                else
+                {
+                    // decrease timer to 0
+                    secondsLeft = Mathf.Max(secondsLeft - Time.deltaTime, 0);
+                    // set timer text
+                    timerText.text = string.Format("{0}:{1:00.00}", (int)(secondsLeft / 60), secondsLeft % 60);
+                    // update kill counter
+                    killCountText.text = _killCount.ToString();
+                    // see if game is over now
+                    if (secondsLeft == 0)
+                    {
+                        gameOver = true;
+                        UpdateWinText("You have Won!!");
+                    }
                 }
             }
-        }
+
         }
 
         private void UpdateWinText(string message)
@@ -128,25 +129,17 @@ namespace Assets.Scripts.Player
         public void AddKill(int score = 1)
         {
             ++_killCount;
-            DisplayKillCount();
-        }
-
-        void DisplayKillCount()
-        {
-		killCountText.text = _killCount.ToString();
-		
         }
 
 
         void DeleteAll()
         {
-            gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
             for (int i = 0; i < gameObjects.Length; i++)
             {
                 Destroy(gameObjects[i]);
-            }
-
-            spawnObjects = GameObject.FindGameObjectsWithTag("spawner");
+            }            
+            GameObject[] spawnObjects = GameObject.FindGameObjectsWithTag("spawner");
             for (int i = 0; i < spawnObjects.Length; i++)
             {
                 Destroy(spawnObjects[i]);
@@ -160,7 +153,14 @@ namespace Assets.Scripts.Player
 			}
 
         }
+
+        public void LoadWave(int waveNum)
+        {
+            for(int i = 1; i <= waves.Length; ++i)
+            {
+                waves[i - 1].SetActive(i == waveNum);
+            }
+            secondsLeft = waves[waveNum - 1].GetComponent<WaveInfo>().DurationInSeconds;
+        }
     }
 }
-
-

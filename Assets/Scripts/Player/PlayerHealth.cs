@@ -7,7 +7,10 @@ public class PlayerHealth : MonoBehaviour
 	public AudioClip hit;
 	public static bool player_isDead = false;
 	public int health = 7;
+	public int projectileDmg = 1;
+	public int suicideDmg = 1;
 	public AudioClip deathSound;
+
 	//private AudioSource source;
 	mouthScript mouth;
 
@@ -35,7 +38,7 @@ public class PlayerHealth : MonoBehaviour
 	{
 		if (col.gameObject.CompareTag("bullet"))
 		{
-			health--;
+			health = health - projectileDmg;
 			Debug.Log("-1 HP!");
 			AudioSource.PlayClipAtPoint(hit, transform.position);
 		}
@@ -44,9 +47,9 @@ public class PlayerHealth : MonoBehaviour
 		if (col.gameObject.tag == "EnemySuicide") 
 		{
 			Debug.Log ("Touched Suicide Roach");
-			health = health - 3;
+			health = health - suicideDmg;
 			AudioSource.PlayClipAtPoint(hit, transform.position);
-			Debug.Log ("-3 HP!");
+			Debug.Log ("-" + suicideDmg+ " HP!");
 			Debug.Log ("Health: " + health);
 		}
 		

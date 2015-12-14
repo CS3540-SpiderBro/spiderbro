@@ -9,12 +9,17 @@ public class TitleScript : MonoBehaviour
 		// Update is called once per frame
 	void Update () 
 	{
-		if(Input.GetKeyDown("space") ) 
+		if(Input.GetKeyDown(KeyCode.Space) ) 
         {
-			Application.LoadLevel(level);
+			Application.LoadLevel("Wave1");
         }
+        if (Input.GetKeyDown(KeyCode.Alpha1)) Application.LoadLevel("Wave1");
+        if (Input.GetKeyDown(KeyCode.Alpha2)) Application.LoadLevel("Wave2");
+        if (Input.GetKeyDown(KeyCode.Alpha3)) Application.LoadLevel("Wave3");
+        if (Input.GetKeyDown(KeyCode.Alpha4)) Application.LoadLevel("Wave4");
+        if (Input.GetKeyDown(KeyCode.Alpha5)) Application.LoadLevel("Wave5");
 
-		if (Input.GetKeyDown ("f12")) 
+        if (Input.GetKeyDown (KeyCode.F12)) 
 		{
 			Screen.fullScreen = true;
 		}

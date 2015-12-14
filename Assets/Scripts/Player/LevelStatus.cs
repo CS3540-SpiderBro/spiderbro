@@ -68,7 +68,15 @@ namespace Assets.Scripts.Player
                 Screen.fullScreen = true;
             }
 
-            if (IsPaused || gameOver)
+            if (secondsLeft == 0)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    string nextLevelName = "Wave" + (int.Parse(Application.loadedLevelName.Substring(4)) + 1);
+                    Application.LoadLevel(nextLevelName);
+                }
+            }
+            else if (IsPaused || gameOver)
             {
                 if (Input.GetKeyDown(RestartKeyCode))
                 {
@@ -89,14 +97,14 @@ namespace Assets.Scripts.Player
                 if (mouth.IsDead())
                 {
                     gameOver = true;
-                    UpdateWinText("You Lost!!");
+                    UpdateWinText("You Lost!!\nPress [R] to Restart");
                 }
 
                 if (PlayerHealth.player_isDead)
                 {
                     gameOver = true;
                     //Destroy (gameObject.Player_NEW);
-                    UpdateWinText("You have died!");
+                    UpdateWinText("You have died!\nPress [R] to Restart");
 
                 }
                 else
@@ -111,7 +119,7 @@ namespace Assets.Scripts.Player
                         if (secondsLeft == 0)
                         {
                             gameOver = true;
-                            UpdateWinText("You have Won!!");
+                            UpdateWinText("You have Won!!\nPress [Space] to continue");
                         }
                     }
                     else
@@ -129,7 +137,7 @@ namespace Assets.Scripts.Player
         private void UpdateWinText(string message)
         {
             crossHair.text = string.Empty;
-            winText.text = message + "\nPress [R] to Restart";
+            winText.text = message;
             DeleteAll();
         }
 

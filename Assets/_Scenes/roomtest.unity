@@ -304,14 +304,6 @@ Prefab:
       propertyPath: pausePanel
       value: 
       objectReference: {fileID: 1337799661}
-    - target: {fileID: 11416244, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
-      propertyPath: loseGameSnd
-      value: 
-      objectReference: {fileID: 8300000, guid: 68eba107a54b7354c978ee69736279cd, type: 3}
-    - target: {fileID: 11416244, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
-      propertyPath: TOTAL_SECONDS
-      value: 180
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d63c71649358840f39e7cc1b9d2ad48c, type: 2}
   m_IsPrefabParent: 0
@@ -1023,7 +1015,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499124, guid: 49c556ec7a56aa047a5cc9137c1b55ec, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 199592, guid: 49c556ec7a56aa047a5cc9137c1b55ec, type: 2}
       propertyPath: m_Name
@@ -1218,7 +1210,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
 --- !u!1 &836938564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1703,10 +1695,6 @@ Prefab:
     - target: {fileID: 472392, guid: 557656becabc9754a8d83defedec01bc, type: 2}
       propertyPath: m_RootOrder
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6413770, guid: 557656becabc9754a8d83defedec01bc, type: 2}
-      propertyPath: m_Convex
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 557656becabc9754a8d83defedec01bc, type: 2}
@@ -2902,24 +2890,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 65605321}
   m_RootOrder: 1
---- !u!1 &1965544622 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 195590, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
-  m_PrefabInternal: {fileID: 1971741471}
---- !u!114 &1965544630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1965544622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e054cfeb581709479fa1992b60309d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hit: {fileID: 8300000, guid: c9ea8cf7df6843a47ab7290a31e99288, type: 3}
-  health: 7
-  deathSound: {fileID: 8300000, guid: 92f1e22b578bc184c843df3a60aa8d14, type: 3}
 --- !u!1001 &1971741471
 Prefab:
   m_ObjectHideFlags: 0
@@ -2957,7 +2927,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 486282, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 11475992, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
       propertyPath: spitSlider
@@ -3348,80 +3318,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2132041295}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2137539217 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 146386, guid: eba63b824ae39724d860cb0e5d24ea4a, type: 2}
-  m_PrefabInternal: {fileID: 1971741471}
---- !u!82 &2137539222
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2137539217}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!1 &2138644521
 GameObject:
   m_ObjectHideFlags: 0

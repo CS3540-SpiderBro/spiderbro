@@ -5,6 +5,8 @@ using System.Collections;
 /// </summary>
 public class spawner : MonoBehaviour {
     public GameObject aEnemy;
+
+	public GameObject suicideEnemy;
    
     public int numEnemies;
     public int spawntime = 5;
@@ -47,7 +49,8 @@ public class spawner : MonoBehaviour {
     {
         //var origTr = spawnOrigin.transform.position;
         GameObject aEnemyClone = (GameObject) Instantiate(aEnemy, SpawnBaseObject.transform.position, transform.rotation * Quaternion.Euler(0, rotateY, 0));
-    }
+	}
+
 
     public void switchSpawn(bool state)
     {

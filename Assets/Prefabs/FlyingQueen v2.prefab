@@ -2886,7 +2886,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -44.1583633, y: 8.38364601, z: -58.0654755}
+  m_LocalPosition: {x: -44.1583633, y: 8.5, z: -58.0654755}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 487550}
@@ -3043,6 +3043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aEnemy: {fileID: 162720, guid: c09e3bff37aa2e8439f3a0b8a355dbd1, type: 2}
+  suicideEnemy: {fileID: 0}
   numEnemies: 3
   spawntime: 5
   SpawnON: 1

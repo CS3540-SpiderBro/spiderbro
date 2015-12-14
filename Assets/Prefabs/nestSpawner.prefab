@@ -1076,6 +1076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aEnemy: {fileID: 162720, guid: c09e3bff37aa2e8439f3a0b8a355dbd1, type: 2}
+  suicideEnemy: {fileID: 0}
   numEnemies: 3
   spawntime: 5
   SpawnON: 1

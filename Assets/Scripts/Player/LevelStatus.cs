@@ -29,7 +29,6 @@ namespace Assets.Scripts.Player
         private float secondsLeft;
         private FirstPersonController fpsController;
 
-		public AudioClip loseGameSnd;
 
         public bool IsPaused { get; private set; }
 
@@ -93,7 +92,6 @@ namespace Assets.Scripts.Player
             {
                 gameOver = true;
                 UpdateWinText("You Lost!!");
-				AudioSource.PlayClipAtPoint(loseGameSnd, transform.position);
             }
 
 			if(PlayerHealth.player_isDead)
